@@ -1,2 +1,4 @@
 # 00
-0000
+
+            wget github.com/12ants/00 && bash 00
+
