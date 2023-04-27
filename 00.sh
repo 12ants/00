@@ -11,7 +11,7 @@ grayb=$(tput setab 7) red=$(tput setaf 1) green=$(tput setaf 2) yellow=$(tput se
 cyan=$(tput setaf 6) gray=$(tput setaf 7) white=$(tput setaf 7 bold) pink=$(tput setaf 5 bold) darkblue=$(tput setab 5 bold) blink=$(tput blink) \
 left2=$(tput cub 2) up1=$(tput cuu1) c75="  ---------------------------------------------------------------------------"; clear; echo ; c2="$cyan --$re";
 ## WELCOME-SCREEN
-inst="/home/00/"; mkdir -p $inst; chmod 775 $inst; cd $inst; clear; echo ;
+inst="/home/00/"; mkdir -p $inst; chmod 775 $inst; cd $inst; echo $pwd; sleep 1; clear;
 echo -e "
   $c2  Welcome to$pink Linux-tweaks$re by$green 12ants.com$re
   $c2  Please choose preferred actions \n \n ";
@@ -82,23 +82,15 @@ tar -xf webmin-current.tar.gz --strip-components=1;
 else echo "OK"; fi; cd $inst;
 
 ##
-sleep .1; echo -e "$purple ---------------------------------------------$re "
-sleep .1; echo -e "$purple ---------------------------------------------$re "
-read -ep  "  $c2  remove$green installation-files? $re             [y/n]: " -i "n" "rem-inst"
-if [ $rem-inst == y ]; then echo "removing....";
-rm ./* -R;
-else echo "OK"; fi;
-sleep .1; echo -e "$purple ---------------------------------------------$re "
-sleep .1; echo -e "$purple ---------------------------------------------$re "
+sleep .5; echo -e "$purple ---------------------------------------------$re "
+sleep .5; echo -e "$purple ---------------------------------------------$re "
+sleep .5; echo -e "$purple ---------------------------------------------$re "
+sleep .5; echo -e "$purple ---------------------------------------------$re "
 
 ##
 ## end - reboot
 echo -e "$c2 $green https://12ants.github.io/$re $c2$re
 \v  $c2 $pink your ip: $(hostname -I) $re $c2$re
-\v  $c2  enjoy!$re $c2$re \v\v"
+\v  $c2  enjoy!$re $c2$re \v"; tput sgr0;
 
-echo -e "\v\v"; read -t 4 -ep " $c2 --  reboot now?: " -i$green "yes" "reboot"$re;
-if [ $reboot == yes ]; then "echo rebooting..."; reboot;
-else echo -e "\v\v  $c2$re  OK \v\v"; fi;
-echo -e "  $c2$pink \v\v enjoy! \v\v\v\v";sleep 2; reset;
 
