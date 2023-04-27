@@ -1,7 +1,7 @@
 #/bin/bash
 ## Install-script for Ubuntu/Debian systems
 ## visit https://12ants.github.io for credits
-rootgit=12ants.github.io;
+rootgit=github.com/12ants/00;
 if [ $UID != 0 ]; then echo -e " \n\n\t This script must be run as root... try command: [ sudo -s ] \n\n " 1>&2; exit 1; fi; ## ROOT-CHECK
 
 ## ADDING COLOR-CODES -- (Need to run inside other command.)
@@ -39,7 +39,7 @@ if [ $continue == y ]; then echo -e "\n\n\t --$cyan OK$re -- \n\n"; else exit 1;
 
 ##
 if [ $cloudpanel == y ]; then echo "installing cloudpanel";
-wget -O 12cloudpanel.sh $rootgit/sh/cloudpanel_ask_install.sh && bash 12cloudpanel.sh;
+wget -O 12cloudpanel.sh $rootgit/cloudpanel_ask.sh && bash 12cloudpanel.sh;
 else echo "OK"; fi; cd $inst;
 
 ## 
@@ -54,12 +54,12 @@ else echo "OK"; fi; cd $inst;
 
 ##
 if [ $grub == y ]; then echo "installing grub";
-wget -O 12grub.sh $rootgit/sh/grub.sh; bash 12grub.sh;
+wget -O 12grub.sh $rootgit/grub.sh; bash 12grub.sh;
 else echo "OK"; fi; cd $inst;
 
 ##
 if [ $auto == y ]; then tput blink ; echo "installing auto-sudo";
-wget -O auto-sudo.sh $rootgit/sh/auto-sudo.sh; bash auto-sudo.sh; 
+wget -O auto-sudo.sh $rootgit/auto-sudo.sh; bash auto-sudo.sh; 
 else echo "OK"; fi; cd $inst;
   
 ##
@@ -71,7 +71,7 @@ else echo "OK"; fi; cd $inst;
 
 ##
 if [ $login == y ]; then echo "installing login-screen";
-wget -O 12login.sh $rootgit/sh/login.sh; bash 12login.sh;
+wget -O 12login.sh $rootgit/login.sh; bash 12login.sh;
 else echo "OK"; fi; cd $inst;
 
 ##
@@ -81,7 +81,15 @@ tar -xf webmin-current.tar.gz --strip-components=1;
 ./setup.sh /usr/local/webmin;
 else echo "OK"; fi; cd $inst;
 
+##
+sleep .1; echo -e "$purple ---------------------------------------------$re "
+sleep .1; echo -e "$purple ---------------------------------------------$re "
+read -ep  "  $c2  remove$green installation-files? $re             [y/n]: " -i "n" "rem-inst"
+if [ $rem-inst == y ]; then echo "removing....";
 rm ./* -R;
+else echo "OK"; fi;
+sleep .1; echo -e "$purple ---------------------------------------------$re "
+sleep .1; echo -e "$purple ---------------------------------------------$re "
 
 ##
 ## end - reboot
