@@ -11,19 +11,20 @@ grayb=$(tput setab 7) red=$(tput setaf 1) green=$(tput setaf 2) yellow=$(tput se
 cyan=$(tput setaf 6) gray=$(tput setaf 7) white=$(tput setaf 7 bold) pink=$(tput setaf 5 bold) darkblue=$(tput setab 5 bold) blink=$(tput blink) \
 left2=$(tput cub 2) up1=$(tput cuu1) c75="  ---------------------------------------------------------------------------"; clear; echo ; c2="$cyan --$re";
 ## WELCOME-SCREEN
-inst="/home/00/"; mkdir -p $inst; chmod 775 $inst; cd $inst; echo $pwd; sleep 1; clear;
+inst="/home/00/"; mkdir -p $inst; chmod 775 $inst; cd $inst; echo pwd; sleep 1; clear;
 echo -e "
   $c2  Welcome to$pink Linux-tweaks$re by$green 12ants.com$re
   $c2  Please choose preferred actions \n \n ";
 read -ep "  $c2  Root repo for install-files: [Press Enter to continue] " -i "${rootgit}" rootgit;
 read -ep "  $c2  update system? [y/n]: " -i "n" "upsys";
-if [ $upsys == y ]; then echo "updating..."; apt update; apt -y upgrade; apt -y install curl wget; clear; echo ""; echo ""; else echo ok ; fi; 
-clear;
+if [ $upsys == y ]; then echo "updating..."; apt update; apt -y upgrade; apt -y install curl wget; clear; else echo ok ; apt install curl -y&>/dev/null; fi; clear; echo hh
+
 ##############################
 ######## INSTALLER ###########
 ######################
 echo -e "\n\n\t $c2 $pink Software installation$re -- \n\n"
-read -ep  "  $c2  install$green cloudpanel? $re         [y/n]: " -i "n" "cloudpanel"
+read -ep  "  $c2  install$green cloudpanel-regular? $re         [y/n]: " -i "n" "cpr"
+read -ep  "  $c2  install$green cloudpanel-cracked? $re         [y/n]: " -i "n" "cpc"
 read -ep  "  $c2  install$green hestia-web-server? $re  [y/n]: " -i "n" "hestia"
 read -ep  "  $c2  install$green guake? $re              [y/n]: " -i "n" "guake"
 read -ep  "  $c2  install$green custom-grub? $re        [y/n]: " -i "n" "grub"
@@ -38,9 +39,19 @@ if [ $continue == y ]; then echo -e "\n\n\t --$cyan OK$re -- \n\n"; else exit 1;
 ## REMEMER TO CHANGE VAR-NAMES.
 
 ##
-if [ $cloudpanel == y ]; then echo "installing cloudpanel";
+if [ $cpc == y ]; then echo "installing cloudpanel";
 wget -O 12cloudpanel.sh $rootgit/cloudpanel_ask.sh && bash 12cloudpanel.sh;
 else echo "OK"; fi; cd $inst;
+
+##
+if [ $cpr == y ]; then echo "installing cloudpanel";
+curl -sS https://installer.cloudpanel.io/ce/v2/install.sh -o install.sh; \
+echo "3874fff99744cf3afe6f533013282e87c95640e128d1d3998666e2929dc12978 install.sh" | \
+sha256sum -c && sudo bash install.sh;
+read -ep "   -- System will now reboot... Run installer again to install other apps -- " -i "OK" "kkkkkk"
+sleep 11; reboot;
+else echo "OK"; fi; cd $inst;
+
 
 ## 
 if [ $hestia == y ]; then echo "installing hestia";
@@ -90,7 +101,7 @@ sleep .5; echo -e "$purple ---------------------------------------------$re "
 ##
 ## end - reboot
 echo -e "$c2 $green https://12ants.github.io/$re $c2$re
-\v  $c2 $pink your ip: $(hostname -I) $re $c2$re
-\v  $c2  enjoy!$re $c2$re \v"; tput sgr0;
+$c2 $pink your ip: $(hostname -I) $re $c2$re
+$c2  enjoy!$re $c2$re \v"; tput sgr0;
 
 
