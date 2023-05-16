@@ -1,15 +1,11 @@
 #/bin/bash
 ## Install-script for Ubuntu/Debian systems
 ## visit https://12ants.github.io for credits
-#/bin/bash
+reset
 if [ $UID != 0 ]; then echo -e " \n\n\t This script must be run as root... try command: [ sudo -s ] \n\n " 1>&2; exit 1; fi; ## ROOT-CHECK
 
-alias "ipnet"="hostname -I | head -c 13"
-alias "ippublic"="dig +short myip.opendns.com @resolver1.opendns.com"
-alias "ipports"="lsof -i -P -n"
 
 rootgit="12ants.github.io/00";
-if [ $UID != 0 ]; then echo -e " \n\n\t This script must be run as root... try command: [ sudo -s ] \n\n " 1>&2; exit 1; fi; ## ROOT-CHECK
 
 ## ADDING COLOR-CODES -- (Need to run inside other command.)
 export bold=$(tput bold) dim=$(tput dim) so=$(tput smso) noso=$(tput rmso) rev=$(tput rev) re=$(tput sgr0) normal=$(tput sgr0) \
@@ -18,15 +14,24 @@ grayb=$(tput setab 7) red=$(tput setaf 1) green=$(tput setaf 2) yellow=$(tput se
 cyan=$(tput setaf 6) gray=$(tput setaf 7) white=$(tput setaf 7 bold) pink=$(tput setaf 5 bold) darkblue=$(tput setab 5 bold) blink=$(tput blink) \
 left2=$(tput cub 2) up1=$(tput cuu1) c75="  ---------------------------------------------------------------------------"; clear; echo ; c2="$cyan --$re";
 ## WELCOME-SCREEN
-inst="/home/00/"; mkdir -p $inst; chmod 775 $inst; cd $inst; echo pwd; sleep 1; clear;
+inst="/home/00/"; mkdir -p $inst; chmod 775 $inst; clear;
 echo -e "
   $c2  Welcome to$pink Linux-tweaks$re by$green 12ants.com$re
   $c2  Please choose preferred actions \n \n ";
 read -ep "  $c2  Root repo for install-files: [Press Enter to continue] " -i "${rootgit}" rootgit;
 read -ep "  $c2  update system? [y/n]: " -i "n" "upsys";
-if [ $upsys == y ]; then echo "updating..."; apt update; apt -y upgrade; apt -y install curl wget; clear; else echo ok ; apt install curl -y&>/dev/null; fi; clear; echo hh
-echo; echo "    -- $blue Network IP:$cyan $(ipnet)"; echo; $re
-echo; echo "    -- $purple Public  IP:$cyan $(ippub)"; echo; $re
+##
+if [ $upsys == y ]; then echo "ok";
+apt update; apt -y upgrade; apt -y install curl wget; clear;
+else echo "OK"; fi; cd $inst;
+
+alias "ipnet"="hostname -I | head -c 13"
+alias "ippublic"="dig +short myip.opendns.com @resolver1.opendns.com"
+alias "ipports"="lsof -i -P -n"
+
+echo -e "    -- $blue Network IP:$cyan $(ipnet) "
+echo -e "    -- $purple Public  IP:$cyan $(ippublic) "
+
 ##############################
 ######## INSTALLER ###########
 ######################
