@@ -9,23 +9,26 @@ fi
 
 " >> /root/.bashrc;
 
+echo '
+# ALIAS
+alias "ip-network"="hostname -I"
+alias "ip-public"="dig +short myip.opendns.com @resolver1.opendns.com"
+alias "ip-ports"="lsof -i -P -n"
 
-## COLOR-ALIAS
-###############################################
-
-#### DISPLAY IP - NET & PUB (TO THE RIGHT) ####
-
-## NETWORK-IP
-
-## netip="$(hostname -I)"
-## PUBLIC-IP
-## pubip="$(dig +short myip.opendns.com @resolver1.opendns.com)"
-
-## function b_alias { tput sc; tput cup 0 0; tput setaf 5; echo -e "$netip / $pubip"; tput rc; } ; PROMPT_COMMAND=b_alias;
-
-###############################################
-echo "PS1='\[\e[34m\]\u\[\e[36m\]@\[\e[96m\]$(dig +short myip.opendns.com @resolver1.opendns.com)\[\e[34m\]/\e\e[36m\]$(hostname -I)\[\e[34m\]/\e[96m\]\h\e[34m\]\[\e[96m\]\w:\[\e[m\]'"
+#### USERNAME ####
+##################
+PS1="\[\e[0;38;5;23m\]$? \[\e[0;2m\]/ \[\e[0;38;5;30m\]$(ip route get 1.1.1.1 | awk -F"src " '"'"'NR==1{split($2,a," ");print a[1]}'"'"') \[\e[0;2m\]/ \[\e[0;38;5;31m\]\u \[\e[0;2m\]/ \[\e[0;38;5;36m\]\w \[\e[0m\]> \[\e[0m\]"'
 >> ~/.bash_aliases;
 
 
 
+echo '
+# ALIAS
+alias "ip-network"="hostname -I"
+alias "ip-public"="dig +short myip.opendns.com @resolver1.opendns.com"
+alias "ip-ports"="lsof -i -P -n"
+
+#### USERNAME ####
+##################
+PS1="\[\e[0;38;5;23m\]$? \[\e[0;2m\]/ \[\e[0;38;5;30m\]$(ip route get 1.1.1.1 | awk -F"src " '"'"'NR==1{split($2,a," ");print a[1]}'"'"') \[\e[0;2m\]/ \[\e[0;38;5;31m\]\u \[\e[0;2m\]/ \[\e[0;38;5;36m\]\w \[\e[0m\]> \[\e[0m\]"'
+>> /root/.bash_aliases;
