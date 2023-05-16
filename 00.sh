@@ -1,6 +1,13 @@
 #/bin/bash
 ## Install-script for Ubuntu/Debian systems
 ## visit https://12ants.github.io for credits
+#/bin/bash
+if [ $UID != 0 ]; then echo -e " \n\n\t This script must be run as root... try command: [ sudo -s ] \n\n " 1>&2; exit 1; fi; ## ROOT-CHECK
+
+alias "ipnet"="hostname -I | head -c 13"
+alias "ippublic"="dig +short myip.opendns.com @resolver1.opendns.com"
+alias "ipports"="lsof -i -P -n"
+
 rootgit="12ants.github.io/00";
 if [ $UID != 0 ]; then echo -e " \n\n\t This script must be run as root... try command: [ sudo -s ] \n\n " 1>&2; exit 1; fi; ## ROOT-CHECK
 
@@ -18,20 +25,25 @@ echo -e "
 read -ep "  $c2  Root repo for install-files: [Press Enter to continue] " -i "${rootgit}" rootgit;
 read -ep "  $c2  update system? [y/n]: " -i "n" "upsys";
 if [ $upsys == y ]; then echo "updating..."; apt update; apt -y upgrade; apt -y install curl wget; clear; else echo ok ; apt install curl -y&>/dev/null; fi; clear; echo hh
-
+echo; echo "    -- $blue Network IP:$cyan $(ipnet)"; echo; $re
+echo; echo "    -- $purple Public  IP:$cyan $(ippub)"; echo; $re
 ##############################
 ######## INSTALLER ###########
 ######################
 echo -e "\n\n\t $c2 $pink Software installation$re -- \n\n"
 read -ep  "  $c2  install$green cloudpanel-regular? $re         [y/n]: " -i "n" "cpr"
 read -ep  "  $c2  install$green cloudpanel-cracked? $re         [y/n]: " -i "n" "cpc"
-read -ep  "  $c2  install$green hestia-web-server? $re  [y/n]: " -i "n" "hestia"
-read -ep  "  $c2  install$green guake? $re              [y/n]: " -i "n" "guake"
-read -ep  "  $c2  install$green custom-grub? $re        [y/n]: " -i "n" "grub"
-read -ep  "  $c2  install$green sudo-color? $re         [y/n]: " -i "n" "auto"
-read -ep  "  $c2  install$green 4xfce GUI-OS? $re       [y/n]: " -i "n" "xfce"
-read -ep  "  $c2  install$green login-screen? $re       [y/n]: " -i "n" "login"
-read -ep  "  $c2  install$green webmin? $re             [y/n]: " -i "n" "webmin"
+read -ep  "  $c2  install$green hestia-web-server? $re          [y/n]: " -i "n" "hestia"
+read -ep  "  $c2  install$green guake? $re                      [y/n]: " -i "n" "guake"
+read -ep  "  $c2  install$green custom-grub? $re                [y/n]: " -i "n" "grub"
+read -ep  "  $c2  install$green sudo-color? $re                 [y/n]: " -i "n" "auto"
+read -ep  "  $c2  install$green 4xfce GUI-OS? $re               [y/n]: " -i "n" "xfce"
+read -ep  "  $c2  install$green login-screen? $re               [y/n]: " -i "n" "login"
+read -ep  "  $c2  install$green webmin? $re                     [y/n]: " -i "n" "webmin"
+read -ep  "  $c2  install$green openlitespeed? $re              [y/n]: " -i "n" "ols"
+
+
+
 echo -e "$purple ---------------------------------------------$re "
 read -ep "  $c2 $yellow begin installation? $re         [y/n]: " -i "n" "continue"
   
@@ -91,6 +103,10 @@ wget https://download.webmin.com/devel/tarballs/webmin-current.tar.gz;
 tar -xf webmin-current.tar.gz --strip-components=1; 
 ./setup.sh /usr/local/webmin;
 else echo "OK"; fi; cd $inst;
+
+
+## remove install directories
+rm $inst -R
 
 ##
 sleep .5; echo -e "$purple ---------------------------------------------$re "
