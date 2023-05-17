@@ -64,7 +64,7 @@ cd $inst;
 
 
 ##
-read -ep "  -- Wich user? " uusr; 
+read -ep "  -- Wich user to get color? " uusr; 
 if [ $autocolor == y ]; then echo "installing auto-sudo"; cd /;
 touch ~/.bash_aliases; chmod 775 ~/.bash_aliases; touch /home/$uusr/.bashrc;
 echo -e 'alias "ipnet"="hostname -I | head -c 13"; alias "ippublic"="dig +short myip.opendns.com @resolver1.opendns.com"; alias "ipports"="lsof -i -P -n";
