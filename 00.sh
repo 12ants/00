@@ -4,6 +4,8 @@
 if [ $UID != 0 ]; then echo -e " \n\n\t This script must be run as root... try command: [ sudo -s ] \n\n " 1>&2; exit 1; fi; ## ROOT-CHECK
 reset
 rootgit="12ants.github.io/00";
+ipnet="hostname -I | head -c 13"
+ippublic="dig +short myip.opendns.com @resolver1.opendns.com"
 ## ADDING COLOR-CODES -- (Need to run inside other command.)
 export bold=$(tput bold) dim=$(tput dim) so=$(tput smso) noso=$(tput rmso) rev=$(tput rev) re=$(tput sgr0) normal=$(tput sgr0) \
 redb=$(tput setab 1) greenb=$(tput setab 2) yellowb=$(tput setab 3) blueb=$(tput setab 4) purpleb=$(tput setab 5) cyanb=$(tput setab 6) \
@@ -21,12 +23,8 @@ read -ep "  $c2  update system? [y/n]: " -i "n" "upsys";
 if [ $upsys == y ]; then echo "ok";
 apt update; apt -y upgrade; apt -y install curl wget; clear;
 else echo "OK"; fi; cd $inst;
-
-export alias "ipnet"="hostname -I | head -c 13"
-alias "ippublic"="dig +short myip.opendns.com @resolver1.opendns.com"
-sleep 1;
-echo -n "    -- $blue Network IP:$cyan "; ipnet;
-echo -n "    -- $purple Public  IP:$cyan " ippublic;
+echo -n "    -- $blue Network IP:$cyan "; $ipnet;
+echo -n "    -- $purple Public  IP:$cyan "; $ippublic;
 
 ##############################
 ######## INSTALLER ###########
