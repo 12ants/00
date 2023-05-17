@@ -64,10 +64,12 @@ cd $inst;
 
 
 ##
+read -ep "  -- Wich user? " uusr; 
 if [ $autocolor == y ]; then echo "installing auto-sudo"; cd /;
-touch ~/.bash_aliases; chmod 775 ~/.bash_aliases;
+touch ~/.bash_aliases; chmod 775 ~/.bash_aliases; touch /home/$uusr/.bashrc;
 echo -e 'alias "ipnet"="hostname -I | head -c 13"; alias "ippublic"="dig +short myip.opendns.com @resolver1.opendns.com"; alias "ipports"="lsof -i -P -n";
-PS1="\[\e[0;38;5;23m\]$? \[\e[0;2m\]/ \[\e[0;38;5;30m\]$(ipnet) \[\e[0;2m\]/ \[\e[0;38;5;31m\]\u \[\e[0;2m\]/ \[\e[0;38;5;36m\]\w \[\e[0m\]> \[\e[0m\]"' >> ~/.bash_aliases
+PS1="\[\e[0;38;5;23m\]$? \[\e[0;2m\]/ \[\e[0;38;5;30m\]$(ipnet) \[\e[0;2m\]/ \[\e[0;38;5;31m\]\u \[\e[0;2m\]/ \[\e[0;38;5;36m\]\w \[\e[0m\]> \[\e[0m\]"' >> /home/$uusr/.bashrc
+
 echo -e 'alias "ipnet"="hostname -I | head -c 13"; alias "ippublic"="dig +short myip.opendns.com @resolver1.opendns.com"; alias "ipports"="lsof -i -P -n";
 PS1="\[\e[0;38;5;23m\]$? \[\e[0;2m\]/ \[\e[0;38;5;30m\]$(ipnet) \[\e[0;2m\]/ \[\e[0;38;5;31m\]\u \[\e[0;2m\]/ \[\e[0;38;5;36m\]\w \[\e[0m\]> \[\e[0m\]"' >> ~/.bashrc
 echo '
