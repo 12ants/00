@@ -1,12 +1,9 @@
-#/bin/bash
+#! /bin/bash
 ## Install-script for Ubuntu/Debian systems
 ## visit https://12ants.github.io for credits
-reset
 if [ $UID != 0 ]; then echo -e " \n\n\t This script must be run as root... try command: [ sudo -s ] \n\n " 1>&2; exit 1; fi; ## ROOT-CHECK
-
-
+reset
 rootgit="12ants.github.io/00";
-
 ## ADDING COLOR-CODES -- (Need to run inside other command.)
 export bold=$(tput bold) dim=$(tput dim) so=$(tput smso) noso=$(tput rmso) rev=$(tput rev) re=$(tput sgr0) normal=$(tput sgr0) \
 redb=$(tput setab 1) greenb=$(tput setab 2) yellowb=$(tput setab 3) blueb=$(tput setab 4) purpleb=$(tput setab 5) cyanb=$(tput setab 6) \
@@ -28,9 +25,9 @@ else echo "OK"; fi; cd $inst;
 alias "ipnet"="hostname -I | head -c 13"
 alias "ippublic"="dig +short myip.opendns.com @resolver1.opendns.com"
 alias "ipports"="lsof -i -P -n"
-
-echo -e "    -- $blue Network IP:$cyan $(ipnet) "
-echo -e "    -- $purple Public  IP:$cyan $(ippublic) "
+sleep 1;
+echo -n "    -- $blue Network IP:$cyan "; ipnet
+echo -n "    -- $purple Public  IP:$cyan " ippublic
 
 ##############################
 ######## INSTALLER ###########
@@ -48,7 +45,7 @@ echo -e  "  $c2  install$green login-screen? $re               [y/n]: " ;
 echo -e  "  $c2  install$green webmin? $re                     [y/n]: " ;
 echo -e  "  $c2  install$green openlitespeed? $re              [y/n]: " ;
 tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
-read -ep  "  $c2  install$green sudo-color? $re                 [y/n]: " -i "y" "auto"
+read -ep  "  $c2  install$green sudo-color? $re                 [y/n]: " -i "n" "autocolor"
 read -ep  "  $c2  install$green cloudpanel-regular? $re         [y/n]: " -i "n" "cpr"
 read -ep  "  $c2  install$green cloudpanel-cracked? $re         [y/n]: " -i "n" "cpc"
 read -ep  "  $c2  install$green hestia-web-server? $re          [y/n]: " -i "n" "hestia"
@@ -68,6 +65,11 @@ if [ $continue == y ]; then echo -e "\n\n\t --$cyan OK$re -- \n\n"; else exit 1;
 ## REMEMER TO CHANGE VAR-NAMES.
 
 ##
+if [ $autocolor == y ]; then ; echo "installing auto-sudo";
+wget -O auto-sudo.sh $rootgit/auto-sudo.sh; chmod 775 ./*;  bash auto-sudo.sh; 
+else echo "OK"; fi; cd $inst;
+
+##
 if [ $cpc == y ]; then echo "installing cloudpanel";
 wget -O 12cloudpanel.sh $rootgit/cloudpanel_ask.sh && bash 12cloudpanel.sh;
 else echo "OK"; fi; cd $inst;
@@ -84,7 +86,7 @@ else echo "OK"; fi; cd $inst;
 
 ## 
 if [ $hestia == y ]; then echo "installing hestia";
-wget -O 12hestia.sh https://raw.githubusercontent.com/hestiacp/hestiacp/release/install/hst-install.sh; bash 12hestia.sh;
+wget -O 12hestia.sh https://raw.githubusercontent.com/hestiacp/hestiacp/release/install/hst-install.sh; chmod 775 ./*; bash 12hestia.sh;
 else echo "OK"; fi; cd $inst;
 
 ##
@@ -97,11 +99,7 @@ if [ $grub == y ]; then echo "installing grub";
 wget -O 12grub.sh $rootgit/grub.sh; bash 12grub.sh;
 else echo "OK"; fi; cd $inst;
 
-##
-if [ $auto == y ]; then ; echo "installing auto-sudo";
-wget -O auto-sudo.sh $rootgit/auto-sudo.sh; bash auto-sudo.sh; 
-else echo "OK"; fi; cd $inst;
-  
+
 ##
 if [ $xfce == y ]; then ; echo "installing xfce";
 clear; echo -e "\n\t -- This might take a while \n\t "
