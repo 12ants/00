@@ -36,12 +36,24 @@ echo -e "    -- $purple Public  IP:$cyan $(ippublic) "
 ######## INSTALLER ###########
 ######################
 echo -e "\n\n\t $c2 $pink Software installation$re -- \n\n"
+
+echo -e  "  $c2  install$green sudo-color? $re                 [y/n]: " ;
+echo -e  "  $c2  install$green cloudpanel-regular? $re         [y/n]: " ;
+echo -e  "  $c2  install$green cloudpanel-cracked? $re         [y/n]: " ;
+echo -e  "  $c2  install$green hestia-web-server? $re          [y/n]: " ;
+echo -e  "  $c2  install$green guake? $re                      [y/n]: " ;
+echo -e  "  $c2  install$green custom-grub? $re                [y/n]: " ;
+echo -e  "  $c2  install$green 4xfce GUI-OS? $re               [y/n]: " ;
+echo -e  "  $c2  install$green login-screen? $re               [y/n]: " ;
+echo -e  "  $c2  install$green webmin? $re                     [y/n]: " ;
+echo -e  "  $c2  install$green openlitespeed? $re              [y/n]: " ;
+tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+read -ep  "  $c2  install$green sudo-color? $re                 [y/n]: " -i "y" "auto"
 read -ep  "  $c2  install$green cloudpanel-regular? $re         [y/n]: " -i "n" "cpr"
 read -ep  "  $c2  install$green cloudpanel-cracked? $re         [y/n]: " -i "n" "cpc"
 read -ep  "  $c2  install$green hestia-web-server? $re          [y/n]: " -i "n" "hestia"
 read -ep  "  $c2  install$green guake? $re                      [y/n]: " -i "n" "guake"
 read -ep  "  $c2  install$green custom-grub? $re                [y/n]: " -i "n" "grub"
-read -ep  "  $c2  install$green sudo-color? $re                 [y/n]: " -i "n" "auto"
 read -ep  "  $c2  install$green 4xfce GUI-OS? $re               [y/n]: " -i "n" "xfce"
 read -ep  "  $c2  install$green login-screen? $re               [y/n]: " -i "n" "login"
 read -ep  "  $c2  install$green webmin? $re                     [y/n]: " -i "n" "webmin"
@@ -86,12 +98,12 @@ wget -O 12grub.sh $rootgit/grub.sh; bash 12grub.sh;
 else echo "OK"; fi; cd $inst;
 
 ##
-if [ $auto == y ]; then tput blink ; echo "installing auto-sudo";
+if [ $auto == y ]; then ; echo "installing auto-sudo";
 wget -O auto-sudo.sh $rootgit/auto-sudo.sh; bash auto-sudo.sh; 
 else echo "OK"; fi; cd $inst;
   
 ##
-if [ $xfce == y ]; then tput blink ; echo "installing xfce";
+if [ $xfce == y ]; then ; echo "installing xfce";
 clear; echo -e "\n\t -- This might take a while \n\t "
 apt install -y -qq xfce4-session xfce4-goodies xfce4-panel alsa synaptic xinit luakit firefox guake    #  minimal desktop env
 echo -e "\v\t Type [ startx ] to execute \v\v"
