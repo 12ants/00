@@ -1,7 +1,7 @@
-#!/bin/bash
-alias "ipnet"="tput setaf 1; hostname -I | head -c 13; tput sgr0; echo;"
-alias "ippublic"="tput setaf 2; dig +short myip.opendns.com @resolver1.opendns.com; tput sgr0;"
-alias "ipports"="tput setaf 6; lsof -i -P -n; tput sgr0;"
+cd /;
+alias "ipnet"="tput setaf 1; hostname -I | head -c 13; tput sgr0; echo;"; 
+alias "ippublic"="tput setaf 2; dig +short myip.opendns.com @resolver1.opendns.com; tput sgr0;"; 
+alias "ipports"="tput setaf 6; lsof -i -P -n; tput sgr0;"; 
 sleep 1;
 echo -e "  -- Open ports:"
 ipports
