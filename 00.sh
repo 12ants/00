@@ -126,6 +126,14 @@ tar -xf webmin-current.tar.gz --strip-components=1;
 ./setup.sh /usr/local/webmin;
 else echo "OK"; fi; cd $inst;
 
+##
+if [ $ols == y ]; then echo "installing openlitespeed";
+wget -O 12ols.sh $rootgit/openlitespeed-wp.sh; bash 12ols.sh;
+else echo "OK"; fi; cd $inst;
+
+
+
+
 
 ## remove install directories
 rm $inst -R
