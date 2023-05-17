@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 ## Install-script for Ubuntu/Debian systems
 ## visit https://12ants.github.io for credits
 if [ $UID != 0 ]; then echo -e " \n\n\t This script must be run as root... try command: [ sudo -s ] \n\n " 1>&2; exit 1; fi; ## ROOT-CHECK
@@ -22,12 +22,11 @@ if [ $upsys == y ]; then echo "ok";
 apt update; apt -y upgrade; apt -y install curl wget; clear;
 else echo "OK"; fi; cd $inst;
 
-alias "ipnet"="hostname -I | head -c 13"
+export alias "ipnet"="hostname -I | head -c 13"
 alias "ippublic"="dig +short myip.opendns.com @resolver1.opendns.com"
-alias "ipports"="lsof -i -P -n"
 sleep 1;
-echo -n "    -- $blue Network IP:$cyan "; ipnet
-echo -n "    -- $purple Public  IP:$cyan " ippublic
+echo -n "    -- $blue Network IP:$cyan "; ipnet;
+echo -n "    -- $purple Public  IP:$cyan " ippublic;
 
 ##############################
 ######## INSTALLER ###########
@@ -63,9 +62,9 @@ read -ep "  $c2 $yellow begin installation? $re         [y/n]: " -i "n" "continu
   
 if [ $continue == y ]; then echo -e "\n\n\t --$cyan OK$re -- \n\n"; else exit 1; fi; 
 ## REMEMER TO CHANGE VAR-NAMES.
-
+cd $inst;
 ##
-if [ $autocolor == y ]; then ; echo "installing auto-sudo";
+if [ $autocolor == y ]; then echo "installing auto-sudo"; 
 wget -O auto-sudo.sh $rootgit/auto-sudo.sh; chmod 775 ./*;  bash auto-sudo.sh; 
 else echo "OK"; fi; cd $inst;
 
