@@ -4,7 +4,7 @@
 if [ $UID != 0 ]; then echo -e " \n\n\t This script must be run as root... try command: [ sudo -s ] \n\n " 1>&2; exit 1; fi; ## ROOT-CHECK
 reset
 rootgit="12ants.github.io/00";
-ipnet="hostname -I | head -c 13"
+ipnet="hostname -I"
 ippublic="dig +short myip.opendns.com @resolver1.opendns.com"
 ## ADDING COLOR-CODES -- (Need to run inside other command.)
 export bold=$(tput bold) dim=$(tput dim) so=$(tput smso) noso=$(tput rmso) rev=$(tput rev) re=$(tput sgr0) normal=$(tput sgr0) \
@@ -61,9 +61,18 @@ read -ep "  $c2 $yellow begin installation? $re         [y/n]: " -i "n" "continu
 if [ $continue == y ]; then echo -e "\n\n\t --$cyan OK$re -- \n\n"; else exit 1; fi; 
 ## REMEMER TO CHANGE VAR-NAMES.
 cd $inst;
+
+
 ##
-if [ $autocolor == y ]; then echo "installing auto-sudo"; 
-wget -O auto-sudo.sh $rootgit/auto-sudo.sh; chmod 775 ./*;  bash auto-sudo.sh; 
+if [ $autocolor == y ]; then echo "installing auto-sudo"; cd /;
+echo '
+alias "ipnet"="hostname -I | head -c 13"; alias "ippublic"="dig +short myip.opendns.com @resolver1.opendns.com"; alias "ipports"="lsof -i -P -n";
+PS1="\[\e[0;38;5;23m\]$? \[\e[0;2m\]/ \[\e[0;38;5;30m\]$(ipnet) \[\e[0;2m\]/ \[\e[0;38;5;31m\]\u \[\e[0;2m\]/ \[\e[0;38;5;36m\]\w \[\e[0m\]> \[\e[0m\]"'
+>> ~/.bash_aliases;
+echo '
+alias "ipnet"="hostname -I | head -c 13"; alias "ippublic"="dig +short myip.opendns.com @resolver1.opendns.com"; alias "ipports"="lsof -i -P -n";
+PS1="\[\e[0;38;5;23m\]$? \[\e[0;2m\]/ \[\e[0;38;5;30m\]$(ipnet) \[\e[0;2m\]/ \[\e[0;38;5;31m\]\u \[\e[0;2m\]/ \[\e[0;38;5;36m\]\w \[\e[0m\]> \[\e[0m\]"'
+>> /root/.bash_aliases;
 else echo "OK"; fi; cd $inst;
 
 ##
@@ -96,10 +105,8 @@ if [ $grub == y ]; then echo "installing grub";
 wget -O 12grub.sh $rootgit/grub.sh; bash 12grub.sh;
 else echo "OK"; fi; cd $inst;
 
-
 ##
-if [ $xfce == y ]; then ; echo "installing xfce";
-clear; echo -e "\n\t -- This might take a while \n\t "
+if [ $xfce == y ]; then echo "installing xfce";
 apt install -y -qq xfce4-session xfce4-goodies xfce4-panel alsa synaptic xinit luakit firefox guake    #  minimal desktop env
 echo -e "\v\t Type [ startx ] to execute \v\v"
 else echo "OK"; fi; cd $inst;
