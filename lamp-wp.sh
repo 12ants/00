@@ -10,7 +10,7 @@ apt update -qq > out.log 2>/dev/null;
 ########################################
 sleep 0.1;echo ${darkgray}
 sleep 0.1;echo
-apt install -qq -y apache2 ghostscript libapache2-mod-php curl lynx mariadb-server tar ;
+apt install -qq -y apache2 ghostscript libapache2-mod-php curl lynx mariadb-server tar openssl ;
 apt install -qq -y php php-gd php-memcache php-soap php-tidy php-cli php-bcmath php-curl php-imagick php-intl php-json php-mbstring php-mysql php-xml php-zip ;
 
 fi
@@ -58,13 +58,29 @@ sleep 0.2;echo "    ${pink}--${normal} OK: Apache2 directory is ready!"
 sleep 0.1;echo " ${purple} "
 sleep 0.2;echo "    -------------------------"
 
-
+cd $install_dir;
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 3650 -nodes -subj "/CN=$userurl";
+chmod 775 ./*.pem;
 
 echo "
-<VirtualHost *:80>
+<VirtualHost *:443>
 ServerName ${userurl}
 ServerAlias ${userurl}
 DocumentRoot ${install_dir}
+SSLEngine on
+
+	
+	SSLCertificateKeyFile   key.pem
+	SSLCertificateFile      cert.pem
+
+
+		<FilesMatch "\.(?:cgi|shtml|phtml|php)$">
+		SSLOptions +StdEnvVars
+	</FilesMatch>
+	<Directory /usr/lib/cgi-bin>
+		SSLOptions +StdEnvVars
+	</Directory>
+	
 <Directory ${install_dir}>
 Options FollowSymLinks
 AllowOverride all
