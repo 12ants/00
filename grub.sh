@@ -7,7 +7,7 @@ cd /boot/grub/ ;
 wget -O tard.jpg https://12ants.github.io/00/img/tard2.jpg;
 rm /etc/default/grub.d/*;
 echo '
-GRUB_BACKGROUND="/boot/grub/tard2.jpg"
+GRUB_BACKGROUND="/boot/grub/tard.jpg"
 GRUB_DEFAULT=saved
 GRUB_SAVEDEFAULT=true
 GRUB_TIMEOUT_STYLE=menu
