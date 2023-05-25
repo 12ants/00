@@ -74,7 +74,7 @@ echo "%sudo ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10-installer;
 ##
 echo -e 'alias "ipnet"="hostname -I | head -c 13"; alias "ippublic"="dig +short myip.opendns.com @resolver1.opendns.com"; alias "ipports"="lsof -i -P -n";
 PS1="\[\e[0;38;5;23m\]$? \[\e[0;2m\]/ \[\e[0;38;5;30m\]$(ipnet) \[\e[0;2m\]/ \[\e[0;38;5;31m\]\u \[\e[0;2m\]/ \[\e[0;38;5;36m\]\w \[\e[0m\]> \[\e[0m\]"' >> ~/.bashrc
-echo '
+echo -e '
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
