@@ -65,28 +65,38 @@ cd $inst;
 
 ##
 if [ $autocolor == y ]; then echo "installing auto-sudo"; cd /;
-read -ep "  -- Wich user to get color? " uusr;
-touch ~/.bash_aliases; chmod 775 ~/.bash_aliases; touch /home/$uusr/.bashrc;
-echo -e 'alias "ipnet"="hostname -I | head -c 13"; alias "ippublic"="dig +short myip.opendns.com @resolver1.opendns.com"; alias "ipports"="lsof -i -P -n";
-PS1="\[\e[0;38;5;23m\]$? \[\e[0;2m\]/ \[\e[0;38;5;30m\]$(ipnet) \[\e[0;2m\]/ \[\e[0;38;5;31m\]\u \[\e[0;2m\]/ \[\e[0;38;5;36m\]\w \[\e[0m\]> \[\e[0m\]"' >> /home/$uusr/.bashrc
+##
 ## auto root for for admins
+##
 echo "%sudo ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10-installer;
 ##
-echo -e 'alias "ipnet"="hostname -I | head -c 13"; alias "ippublic"="dig +short myip.opendns.com @resolver1.opendns.com"; alias "ipports"="lsof -i -P -n";
-PS1="\[\e[0;38;5;23m\]$? \[\e[0;2m\]/ \[\e[0;38;5;30m\]$(ipnet) \[\e[0;2m\]/ \[\e[0;38;5;31m\]\u \[\e[0;2m\]/ \[\e[0;38;5;36m\]\w \[\e[0m\]> \[\e[0m\]"' >> ~/.bashrc
+##
+# create colors to bash login 
+##
+##
 echo -e '
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+. /usr/share/bash-completion/bash_completion
+elif [ -f /etc/bash_completion ]; then
+. /etc/bash_completion
 fi
-alias "ipnet"="hostname -I | head -c 13"; alias "ippublic"="dig +short myip.opendns.com @resolver1.opendns.com"; alias "ipports"="lsof -i -P -n";
+fi
+#
+#
+alias "ipnet"="hostname -I | head -c 13";
+alias "ippub"="dig +short myip.opendns.com @resolver1.opendns.com";
+alias "ipports"="sudo lsof -i -P -n";
+alias "ip"='echo ; echo " $(tput setaf 6) ----------------------------------------" ;
+echo " $(tput setaf 6) ------$(tput setaf 2) Public IP: $(tput sgr0)$(ippub)$(tput setaf 6) -----------";
+echo " $(tput setaf 6) ---------------------------------------- " ;
+echo " $(tput setaf 6) ------$(tput setaf 4) Network IP: $(tput sgr0)$(ipnet)$(tput setaf 6) -------";
+echo " $(tput setaf 6) ---------------------------------------- " ; echo ; echo ; '
+ip
 PS1="\[\e[0;38;5;23m\]$? \[\e[0;2m\]/ \[\e[0;38;5;30m\]$(ipnet) \[\e[0;2m\]/ \[\e[0;38;5;31m\]\u \[\e[0;2m\]/ \[\e[0;38;5;36m\]\w \[\e[0m\]> \[\e[0m\]"'
->> /root/.bashrc;
+> /etc/bash.bashrc;
 else echo "OK"; fi; cd $inst;
-
+##
 ##
 if [ $cpc == y ]; then echo "installing cloudpanel";
 wget -O 12cloudpanel.sh $rootgit/cloudpanel_ask.sh && bash 12cloudpanel.sh;
