@@ -67,14 +67,10 @@ cd $inst;
 if [ $bbash == y ]; then echo "  --  making bash better... "; sleep 1; cd /;
 ##
 ## auto root for for admins
-##
 echo "%sudo ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10-installer;
-##
-##
-# create colors to bash login 
-##
-##
-
+apt -y install fortune cowsay;
+ln /usr/games/fortune /bin/
+ln /usr/games/cowsay /bin/
 cd $inst;
 mv /etc/bash.bashrc /etc/bash.bashrc-backup; wget -O "/etc/bash.bashrc" "https://github.com/12ants/00/raw/main/bash-upg.sh"; 
 else echo "OK"; fi; cd $inst;
