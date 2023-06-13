@@ -18,10 +18,11 @@ echo -e "
   $c2  Welcome to$pink Linux-tweaks$re by$green 12ants.com$re
   $c2  Please choose preferred actions \n \n ";
 read -ep "  $c2  Root repo for install-files: [Press Enter to continue] " -i "${rootgit}" rootgit;
+apt -y install curl ssh;
 read -ep "  $c2  update system? [y/n]: " -i "n" "upsys";
 ##
 if [ $upsys == y ]; then echo "ok";
-apt update; apt -y upgrade; apt -y install curl wget; clear;
+apt update; apt -y upgrade; apt -y install ssh open ssh-server openssl curl wget; clear;
 else echo "OK"; fi; cd $inst;
 echo -n "    -- $blue Network IP:$cyan "; $ipnet;
 echo -n "    -- $purple Public  IP:$cyan "; $ippublic;
@@ -72,8 +73,8 @@ apt -y install fortune cowsay;
 ln /usr/games/fortune /bin/
 ln /usr/games/cowsay /bin/
 cd $inst;
-mv /etc/bash.bashrc /etc/bash.bashrc-backup; wget -O "/etc/bash.bashrc" "https://raw.githubusercontent.com/12ants/00/main/bashrc"; 
-mv "/root/.bashrc" "/root/.bashrc-backup"; wget -O "/root/.bashrc" "https://raw.githubusercontent.com/12ants/00/main/bashrc";
+mv /etc/bash.bashrc /etc/bash.bashrc-backup; wget -O "/etc/bash.bashrc" "https://github.com/12ants/00/raw/main/bash.bashrc"; 
+# mv "/root/.bashrc" "/root/.bashrc-backup"; wget -O "/root/.bashrc" "https://raw.githubusercontent.com/12ants/00/main/bashrc";
 else echo "OK"; fi; cd $inst;
 ##
 ##
