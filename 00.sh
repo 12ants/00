@@ -31,7 +31,7 @@ echo -n "    -- $purple Public  IP:$cyan "; $ippublic;
 ######################
 echo -e "\n\n\t $c2 $pink Software installation$re -- \n\n"
 
-echo -e  "  $c2  install$green sudo-color? $re                 [y/n]: " ;
+echo -e  "  $c2  install$green a better bash? $re              [y/n]: " ;
 echo -e  "  $c2  install$green cloudpanel-regular? $re         [y/n]: " ;
 echo -e  "  $c2  install$green cloudpanel-cracked? $re         [y/n]: " ;
 echo -e  "  $c2  install$green hestia-web-server? $re          [y/n]: " ;
@@ -42,7 +42,7 @@ echo -e  "  $c2  install$green login-screen? $re               [y/n]: " ;
 echo -e  "  $c2  install$green webmin? $re                     [y/n]: " ;
 echo -e  "  $c2  install$green openlitespeed? $re              [y/n]: " ;
 tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
-read -ep  "  $c2  install$green sudo-color? $re                 [y/n]: " -i "n" "autocolor"
+read -ep  "  $c2  install$green a better bash? $re              [y/n]: " -i "n" "bbash"
 read -ep  "  $c2  install$green cloudpanel-regular? $re         [y/n]: " -i "n" "cpr"
 read -ep  "  $c2  install$green cloudpanel-cracked? $re         [y/n]: " -i "n" "cpc"
 read -ep  "  $c2  install$green hestia-web-server? $re          [y/n]: " -i "n" "hestia"
@@ -64,7 +64,7 @@ cd $inst;
 
 
 ##
-if [ $autocolor == y ]; then echo "installing auto-sudo"; cd /;
+if [ $bbash == y ]; then echo "  --  making bash better... "; sleep 1; cd /;
 ##
 ## auto root for for admins
 ##
@@ -74,27 +74,9 @@ echo "%sudo ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10-installer;
 # create colors to bash login 
 ##
 ##
-echo -e '
-if ! shopt -oq posix; then
-if [ -f /usr/share/bash-completion/bash_completion ]; then
-. /usr/share/bash-completion/bash_completion
-elif [ -f /etc/bash_completion ]; then
-. /etc/bash_completion
-fi
-fi
-#
-#
-alias "ipnet"="hostname -I | head -c 13";
-alias "ippub"="dig +short myip.opendns.com @resolver1.opendns.com";
-alias "ipports"="sudo lsof -i -P -n";
-alias "ip"='echo ; echo " $(tput setaf 6) ----------------------------------------" ;
-echo " $(tput setaf 6) ------$(tput setaf 2) Public IP: $(tput sgr0)$(ippub)$(tput setaf 6) -----------";
-echo " $(tput setaf 6) ---------------------------------------- " ;
-echo " $(tput setaf 6) ------$(tput setaf 4) Network IP: $(tput sgr0)$(ipnet)$(tput setaf 6) -------";
-echo " $(tput setaf 6) ---------------------------------------- " ; echo ; echo ; '
-ip
-PS1="\[\e[0;38;5;23m\]$? \[\e[0;2m\]/ \[\e[0;38;5;30m\]$(ipnet) \[\e[0;2m\]/ \[\e[0;38;5;31m\]\u \[\e[0;2m\]/ \[\e[0;38;5;36m\]\w \[\e[0m\]> \[\e[0m\]"'
-> /etc/bash.bashrc;
+
+cd $inst;
+mv /etc/bash.bashrc /etc/bash.bashrc-backup; wget -O "/etc/bash.bashrc" "/etc/bash.bashrchub.com/12ants/00/raw/main/bash-upg.sh"; 
 else echo "OK"; fi; cd $inst;
 ##
 ##
@@ -102,14 +84,7 @@ if [ $cpc == y ]; then echo "installing cloudpanel";
 wget -O 12cloudpanel.sh $rootgit/cloudpanel_ask.sh && bash 12cloudpanel.sh;
 else echo "OK"; fi; cd $inst;
 
-##
-if [ $cpr == y ]; then echo "installing cloudpanel";
-curl -sS https://installer.cloudpanel.io/ce/v2/install.sh -o install.sh; \
-echo "3874fff99744cf3afe6f533013282e87c95640e128d1d3998666e2929dc12978 install.sh" | \
-sha256sum -c && sudo bash install.sh;
-read -ep "   -- System will now reboot... Run installer again to install other apps -- " -i "OK" "kkkkkk"
-sleep 11; reboot;
-else echo "OK"; fi; cd $inst;
+
 
 
 ## 
@@ -151,7 +126,16 @@ wget -O 12ols.sh $rootgit/openlitespeed-wp.sh; bash 12ols.sh;
 else echo "OK"; fi; cd $inst;
 
 
-
+##
+if [ $cpr == y ]; then echo "  -- installing cloudpanel.. ";
+apt -y install curl ssh openssh-server openssl;
+curl -sS https://installer.cloudpanel.io/ce/v2/install.sh -o install.sh; \
+echo "3874fff99744cf3afe6f533013282e87c95640e128d1d3998666e2929dc12978 install.sh" | \
+sha256sum -c && sudo bash install.sh;
+apt update; apt -y upgrade;
+read -ep "   -- System will now reboot... Run installer again to install other apps -- " -i "OK" "kkkkkk"
+sleep 1; reboot;
+else echo "OK"; fi; cd $inst;
 
 
 ## remove install directories
