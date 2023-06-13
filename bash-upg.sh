@@ -113,5 +113,6 @@ echo " $(tput setaf 6) ------$(tput setaf 2) Public IP: $(tput sgr0)$(ippub)$(tp
 echo " $(tput setaf 6) ---------------------------------- " ;
 echo " $(tput setaf 6) ------$(tput setaf 4) Network IP: $(tput sgr0)$(ipnet)$(tput setaf 6)";
 echo ; '
+tput setaf 7 dim; fortune; tput sgr0;
 ip ; 
-PS1="\[^[[0;38;5;23m\]$?\[^[[0;2m\]_\[^[[0;38;5;30m\]$(ipnet)\[^[[0;2m\]_\[^[[0;38;5;31m\]\u\[^[[0;2m\]_\[^[[0;38;5;36m\]\w_\[^[[0m\]>_\[^[[0m\]"
+PS1="\[^[[0;38;5;23m\]$?\[^[[0;2m\]_\[^[[0;38;5;30m\]$(ipnet)\[^[[0;2m\]_\[^[[0;38;5;31m\]\u\[^[[0;2m\]_\[^[[0;38;5;36m\]\w\[^[[0m\]> \[^[[0m\]"
