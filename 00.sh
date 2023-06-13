@@ -3,7 +3,7 @@
 ## visit https://12ants.github.io for credits
 if [ $UID != 0 ]; then echo -e " \n\n\t This script must be run as root... try command: [ sudo -s ] \n\n " 1>&2; exit 1; fi; ## ROOT-CHECK
 reset
-rootgit="12ants.github.io/00";
+rootgit="https://raw.githubusercontent.com/12ants/00/main";
 ipnet="hostname -I"
 ippublic="dig +short myip.opendns.com @resolver1.opendns.com"
 ## ADDING COLOR-CODES -- (Need to run inside other command.)
