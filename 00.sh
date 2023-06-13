@@ -75,37 +75,11 @@ cd $inst;
 mv /etc/bash.bashrc /etc/bash.bashrc-backup; wget -O "/etc/bash.bashrc" "https://github.com/12ants/00/raw/main/bash.bashrc"; 
 mv /etc/nanorc /etc/nanorc-backup; wget -O "/etc/nanorc" "https://github.com/12ants/00/raw/main/nanorc"; 
 
-# mv "/root/.bashrc" "/root/.bashrc-backup"; wget -O "/root/.bashrc" "https://raw.githubusercontent.com/12ants/00/main/bashrc";
-else echo "OK"; fi; cd $inst;
-##
-##
-if [ $cpc == y ]; then echo "installing cloudpanel";
-wget -O 12cloudpanel.sh $rootgit/cloudpanel_ask.sh && bash 12cloudpanel.sh;
-else echo "OK"; fi; cd $inst;
-
-
-
-
-## 
-if [ $hestia == y ]; then echo "installing hestia";
-wget -O 12hestia.sh https://raw.githubusercontent.com/hestiacp/hestiacp/release/install/hst-install.sh; chmod 775 ./*; bash 12hestia.sh;
-else echo "OK"; fi; cd $inst;
-
-##
-if [ $guake == y ]; then echo "installing guake";
-apt -y install guake;
-else echo "OK"; fi; cd $inst;
-
 ##
 if [ $grub == y ]; then echo "installing grub";
 wget -O 12grub.sh $rootgit/grub.sh; bash 12grub.sh;
 else echo "OK"; fi; cd $inst;
 
-##
-if [ $xfce == y ]; then echo "installing xfce";
-apt install -y -qq xfce4-session xfce4-goodies xfce4-panel alsa synaptic xinit luakit firefox guake    #  minimal desktop env
-echo -e "\v\t Type [ startx ] to execute \v\v"
-else echo "OK"; fi; cd $inst;
 
 ##
 if [ $login == y ]; then echo "installing login-screen";
@@ -136,9 +110,36 @@ read -ep "   -- System will now reboot... Run installer again to install other a
 sleep 1; reboot;
 else echo "OK"; fi; cd $inst;
 
+# mv "/root/.bashrc" "/root/.bashrc-backup"; wget -O "/root/.bashrc" "https://raw.githubusercontent.com/12ants/00/main/bashrc";
+else echo "OK"; fi; cd $inst;
+##
+##
+if [ $cpc == y ]; then echo "installing cloudpanel";
+wget -O 12cloudpanel.sh $rootgit/cloudpanel_ask.sh && bash 12cloudpanel.sh;
+else echo "OK"; fi; cd $inst;
+
+
+
+
+## 
+if [ $hestia == y ]; then echo "installing hestia";
+wget -O 12hestia.sh https://raw.githubusercontent.com/hestiacp/hestiacp/release/install/hst-install.sh; chmod 775 ./*; bash 12hestia.sh;
+else echo "OK"; fi; cd $inst;
+
+##
+if [ $guake == y ]; then echo "installing guake";
+apt -y install guake;
+else echo "OK"; fi; cd $inst;
+
+
+##
+if [ $xfce == y ]; then echo "installing xfce";
+apt install -y -qq xfce4-session xfce4-goodies xfce4-panel alsa synaptic xinit luakit firefox guake    #  minimal desktop env
+echo -e "\v\t Type [ startx ] to execute \v\v"
+else echo "OK"; fi; cd $inst;
 
 ## remove install directories
-rm $inst -R
+rm $inst/* -R
 
 ##
 sleep .5; echo -e "$purple ---------------------------------------------$re "
