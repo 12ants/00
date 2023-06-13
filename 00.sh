@@ -18,7 +18,6 @@ echo -e "
   $c2  Welcome to$pink Linux-tweaks$re by$green 12ants.com$re
   $c2  Please choose preferred actions \n \n ";
 read -ep "  $c2  Root repo for install-files: [Press Enter to continue] " -i "${rootgit}" rootgit;
-apt -y install curl ssh;
 read -ep "  $c2  update system? [y/n]: " -i "n" "upsys";
 ##
 if [ $upsys == y ]; then echo "ok";
