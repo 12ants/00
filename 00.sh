@@ -31,27 +31,27 @@ echo -n "    -- $purple Public  IP:$cyan "; $ippublic;
 ######################
 echo -e "\n\n\t $c2 $pink Software installation$re -- \n\n"
 
-echo -e  "  $c2  install$green a better bash? $re              [y/n]: " ;
-echo -e  "  $c2  install$green cloudpanel-regular? $re         [y/n]: " ;
-echo -e  "  $c2  install$green cloudpanel-cracked? $re         [y/n]: " ;
-echo -e  "  $c2  install$green hestia-web-server? $re          [y/n]: " ;
-echo -e  "  $c2  install$green guake? $re                      [y/n]: " ;
-echo -e  "  $c2  install$green custom-grub? $re                [y/n]: " ;
-echo -e  "  $c2  install$green 4xfce GUI-OS? $re               [y/n]: " ;
-echo -e  "  $c2  install$green login-screen? $re               [y/n]: " ;
-echo -e  "  $c2  install$green webmin? $re                     [y/n]: " ;
-echo -e  "  $c2  install$green openlitespeed? $re              [y/n]: " ;
+echo -e  "  $c2  install$green a better bash? $re                  [y/n]: " ;
+echo -e  "  $c2  install$green custom-grub? $re                    [y/n]: " ;
+echo -e  "  $c2  install$green login-screen? $re                   [y/n]: " ;
+echo -e  "  $c2  install$green webmin? $re                         [y/n]: " ;
+echo -e  "  $c2  install$green openlitespeed? $re                  [y/n]: " ;
+echo -e  "  $c2  install$green cloudpanel-regular? $re             [y/n]: " ;
+echo -e  "  $c2  install$green cloudpanel-cracked? $re             [y/n]: " ;
+echo -e  "  $c2  install$green hestia-web-server? $re              [y/n]: " ;
+echo -e  "  $c2  install$green guake? $re                          [y/n]: " ;
+echo -e  "  $c2  install$green 4xfce GUI-OS? $re                   [y/n]: " ;
 tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
-read -ep  "  $c2  install$green a better bash? $re              [y/n]: " -i "n" "bbash"
-read -ep  "  $c2  install$green cloudpanel-regular? $re         [y/n]: " -i "n" "cpr"
-read -ep  "  $c2  install$green cloudpanel-cracked? $re         [y/n]: " -i "n" "cpc"
-read -ep  "  $c2  install$green hestia-web-server? $re          [y/n]: " -i "n" "hestia"
-read -ep  "  $c2  install$green guake? $re                      [y/n]: " -i "n" "guake"
-read -ep  "  $c2  install$green custom-grub? $re                [y/n]: " -i "n" "grub"
-read -ep  "  $c2  install$green 4xfce GUI-OS? $re               [y/n]: " -i "n" "xfce"
-read -ep  "  $c2  install$green login-screen? $re               [y/n]: " -i "n" "login"
-read -ep  "  $c2  install$green webmin? $re                     [y/n]: " -i "n" "webmin"
-read -ep  "  $c2  install$green openlitespeed? $re              [y/n]: " -i "n" "ols"
+read -ep  "  $c2  install$green a better bash? $re                  [y/n]: " -i "n" "bbash"
+read -ep  "  $c2  install$green custom-grub? $re                    [y/n]: " -i "n" "cpr"
+read -ep  "  $c2  install$green login-screen? $re                   [y/n]: " -i "n" "cpc"
+read -ep  "  $c2  install$green webmin? $re                         [y/n]: " -i "n" "hestia"
+read -ep  "  $c2  install$green openlitespeed? $re                  [y/n]: " -i "n" "guake"
+read -ep  "  $c2  install$green cloudpanel-regular? $re             [y/n]: " -i "n" "grub"
+read -ep  "  $c2  install$green cloudpanel-cracked? $re             [y/n]: " -i "n" "xfce"
+read -ep  "  $c2  install$green hestia-web-server? $re              [y/n]: " -i "n" "login"
+read -ep  "  $c2  install$green guake? $re                          [y/n]: " -i "n" "webmin"
+read -ep  "  $c2  install$green 4xfce GUI-OS? $re                   [y/n]: " -i "n" "ols"
 
 
 
@@ -73,6 +73,8 @@ ln /usr/games/fortune /bin/
 ln /usr/games/cowsay /bin/
 cd $inst;
 mv /etc/bash.bashrc /etc/bash.bashrc-backup; wget -O "/etc/bash.bashrc" "https://github.com/12ants/00/raw/main/bash.bashrc"; 
+mv /etc/nanorc /etc/nanorc-backup; wget -O "/etc/nanorc" "https://github.com/12ants/00/raw/main/nanorc"; 
+
 # mv "/root/.bashrc" "/root/.bashrc-backup"; wget -O "/root/.bashrc" "https://raw.githubusercontent.com/12ants/00/main/bashrc";
 else echo "OK"; fi; cd $inst;
 ##
@@ -147,7 +149,7 @@ sleep .5; echo -e "$purple ---------------------------------------------$re "
 ##
 ## end - reboot
 echo -e "$c2 $green https://12ants.github.io/$re $c2$re
-$c2 $pink your ip: $(hostname -I) $re $c2$re
-$c2  enjoy!$re $c2$re \v"; tput sgr0;
-
+echo;
+ip
+echo;
 
