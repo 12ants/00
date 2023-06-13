@@ -76,7 +76,7 @@ echo "%sudo ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10-installer;
 ##
 
 cd $inst;
-mv /etc/bash.bashrc /etc/bash.bashrc-backup; wget -O "/etc/bash.bashrc" "/etc/bash.bashrchub.com/12ants/00/raw/main/bash-upg.sh"; 
+mv /etc/bash.bashrc /etc/bash.bashrc-backup; wget -O "/etc/bash.bashrc" "https://github.com/12ants/00/raw/main/bash-upg.sh"; 
 else echo "OK"; fi; cd $inst;
 ##
 ##
