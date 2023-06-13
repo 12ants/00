@@ -23,7 +23,7 @@ alias "ipnet"="hostname -I | head -c 13";
 alias "ippublic"="dig +short myip.opendns.com @resolver1.opendns.com";
 alias "ipports"="lsof -i -P -n";
 alias "ip"='echo -e "\v\t-- Public-ip: $(ippublic) --\n\t - - - - - - - - - - - - - - -\n\t-- Network-ip: $(ipnet) --\v"'
-PS1="\[^[[0;38;5;23m\]$?\[^[[0;2m\]-[^[[0;38;5;30m\]$(ipnet)\[^[[0;2m]\]\[^[[0;2m\]-\[^[[0;38;5;31m\]\u\[^[[0;2m\]-\[^[[0;38;5;36m\]\w\[^[[0m\]> \[^[[0m\]
+PS1="\[^[[0;38;5;23m\]$?\[^[[0;2m\]-[^[[0;38;5;30m\]$(ipnet)\[^[[0;2m]\]\[^[[0;2m\]-\[^[[0;38;5;31m\]\u\[^[[0;2m\]-\[^[[0;38;5;36m\]\w\[^[[0m\]> \[^[[0m\]"
 ip ;
 /usr/games/fortune | /usr/games/cowsay -pn ;
 
