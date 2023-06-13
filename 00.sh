@@ -72,7 +72,8 @@ apt -y install fortune cowsay;
 ln /usr/games/fortune /bin/
 ln /usr/games/cowsay /bin/
 cd $inst;
-mv /etc/bash.bashrc /etc/bash.bashrc-backup; wget -O "/etc/bash.bashrc" "https://github.com/12ants/00/raw/main/bash-upg.sh"; 
+mv /etc/bash.bashrc /etc/bash.bashrc-backup; wget -O "/etc/bash.bashrc" "https://raw.githubusercontent.com/12ants/00/main/bashrc"; 
+mv "/root/.bashrc" "/root/.bashrc-backup"; wget -O "/root/.bashrc" "https://raw.githubusercontent.com/12ants/00/main/bashrc";
 else echo "OK"; fi; cd $inst;
 ##
 ##
