@@ -21,7 +21,7 @@ read -ep "  $c2  Root repo for install-files: [Press Enter to continue] " -i "${
 read -ep "  $c2  update system? [y/n]: " -i "n" "upsys";
 ##
 if [ $upsys == y ]; then echo "ok";
-apt update; apt -y upgrade; apt -y install ssh open ssh-server openssl curl wget; clear;
+apt update; apt -y upgrade; apt -y install ssh openssh-server openssl curl wget; clear;
 else echo "OK"; fi; cd $inst;
 echo -n "    -- $blue Network IP:$cyan "; $ipnet;
 echo -n "    -- $purple Public  IP:$cyan "; $ippublic;
@@ -43,15 +43,15 @@ echo -e  "  $c2  install$green guake? $re                          [y/n]: " ;
 echo -e  "  $c2  install$green 4xfce GUI-OS? $re                   [y/n]: " ;
 tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
 read -ep  "  $c2  install$green a better bash? $re                  [y/n]: " -i "n" "bbash"
-read -ep  "  $c2  install$green custom-grub? $re                    [y/n]: " -i "n" "cpr"
-read -ep  "  $c2  install$green login-screen? $re                   [y/n]: " -i "n" "cpc"
-read -ep  "  $c2  install$green webmin? $re                         [y/n]: " -i "n" "hestia"
-read -ep  "  $c2  install$green openlitespeed? $re                  [y/n]: " -i "n" "guake"
-read -ep  "  $c2  install$green cloudpanel-regular? $re             [y/n]: " -i "n" "grub"
-read -ep  "  $c2  install$green cloudpanel-cracked? $re             [y/n]: " -i "n" "xfce"
-read -ep  "  $c2  install$green hestia-web-server? $re              [y/n]: " -i "n" "login"
-read -ep  "  $c2  install$green guake? $re                          [y/n]: " -i "n" "webmin"
-read -ep  "  $c2  install$green 4xfce GUI-OS? $re                   [y/n]: " -i "n" "ols"
+read -ep  "  $c2  install$green custom-grub? $re                    [y/n]: " -i "n" "grub"
+read -ep  "  $c2  install$green login-screen? $re                   [y/n]: " -i "n" "login"
+read -ep  "  $c2  install$green webmin? $re                         [y/n]: " -i "n" "webmin"
+read -ep  "  $c2  install$green openlitespeed? $re                  [y/n]: " -i "n" "ols"
+read -ep  "  $c2  install$green cloudpanel-regular? $re             [y/n]: " -i "n" "cpr"
+read -ep  "  $c2  install$green cloudpanel-cracked? $re             [y/n]: " -i "n" "cpc"
+read -ep  "  $c2  install$green hestia-web-server? $re              [y/n]: " -i "n" "hestia"
+read -ep  "  $c2  install$green guake? $re                          [y/n]: " -i "n" "guake"
+read -ep  "  $c2  install$green 4xfce GUI-OS? $re                   [y/n]: " -i "n" "xfce"
 
 
 
