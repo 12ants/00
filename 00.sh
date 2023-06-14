@@ -21,7 +21,10 @@ read -ep "  $c2  Root repo for install-files: [Press Enter to continue] " -i "${
 read -ep "  $c2  update system? [y/n]: " -i "n" "upsys";
 ##
 if [ $upsys == y ]; then echo "ok";
-apt update; apt -y upgrade; apt -y install ssh openssh-server openssl curl wget; clear;
+apt update; apt -y upgrade;
+## INSTALL BASIC APPS
+apt -y install ssh openssh-server openssl curl wget dnsutils nano
+clear
 else echo "OK"; fi; cd $inst;
 echo -n "    -- $blue Network IP:$cyan "; $ipnet;
 echo -n "    -- $purple Public  IP:$cyan "; $ippublic;
