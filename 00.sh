@@ -6,6 +6,10 @@ reset
 rootgit="https://raw.githubusercontent.com/12ants/00/main";
 ipnet="hostname -I"
 ippublic="dig +short myip.opendns.com @resolver1.opendns.com"
+ippub="dig +short myip.opendns.com @resolver1.opendns.com"
+
+
+
 ## ADDING COLOR-CODES -- (Need to run inside other command.)
 export bold=$(tput bold) dim=$(tput dim) so=$(tput smso) noso=$(tput rmso) rev=$(tput rev) re=$(tput sgr0) normal=$(tput sgr0) \
 redb=$(tput setab 1) greenb=$(tput setab 2) yellowb=$(tput setab 3) blueb=$(tput setab 4) purpleb=$(tput setab 5) cyanb=$(tput setab 6) \
@@ -65,30 +69,66 @@ if [ $continue == y ]; then echo -e "\n\n\t --$cyan OK$re -- \n\n"; else exit 1;
 ## REMEMER TO CHANGE VAR-NAMES.
 cd $inst;
 
-
+################
+## BBASH #######
+################
 ##
-if [ $bbash == y ]; then echo "  --  making bash better... "; sleep 1; cd /;
+## autosudo colorbash etc ...
+if [ $bbash == y ]; then echo "  --  Making bash better... "; sleep 0.5; cd /;
 ##
 ## auto root for for admins
 echo "%sudo ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10-installer;
-apt -y install fortune cowsay;
-ln /usr/games/fortune /bin/
-ln /usr/games/cowsay /bin/
-cd $inst;
-mv /etc/bash.bashrc /etc/bash.bashrc-backup; wget -O "/etc/bash.bashrc" "https://github.com/12ants/00/raw/main/bash.bashrc"; 
+##
+
+## Install greet screen
+apt -y install fortune cowsay; ln /usr/games/fortune /bin/; ln /usr/games/cowsay /bin/; cd $inst;
+mv /etc/bash.bashrc /etc/bash.bashrc-backup;
+wget -O "/etc/bash.bashrc" "https://github.com/12ants/00/raw/main/bash.bashrc"; 
+
+## NANO - Improvements ...
+echo "  --  NANO - Improvements ... "
 mv /etc/nanorc /etc/nanorc-backup; wget -O "/etc/nanorc" "https://github.com/12ants/00/raw/main/nanorc"; 
 
+## color-bash
+export ps1colors='
+## --bash-colors-etc-- ##
+PS1="\[\e[92m\]\$\[\e[0m\] \a\[\e[36;2m\][\[\e[0;37m\]\t\[\e[36;2m\]] [\[\e[0;95;1;3m\]\u\[\e[0;36;2m\]]\[\e[90m\] \[\e[36m\][\[\e[93m\]\w\[\e[36m\]]\[\e[90m\] \[\e[36m\][\[\e[92m\]$(ipnet)\[\e[36m\]]\[\e[90m\] \[\e[36m\][\[\e[0;38;5;44m\]$(ippub)\[\e[36;2m\]]\[\e[90m\] \[\e[36m\][\[\e[0m\]$?\[\e[36;2m\]]\[\e[0m\] \[\e[91;2m\]>\[\e[97m\]_\[\e[91m\]<\n\[\e[0m\]> "
+'; 
+##
+## - Append variable to system files ...
+echo "$ps1colors" >> /root/.bashrc; 
+echo "$ps1colors" >> /etc/profile; 
+echo "$ps1colors" >> /etc/bash.bashrc;
+echo "$ps1colors" >> /home/PS1_colors.sh; 
+##
+##
+echo -e "\n\n\t -- Bash became better ... \t [ Done ] \n\n "; sleep 1
+##
+## - Done setting color to bash ...
+## - Done setting color to bash ...
+
+
+
+################
+## GRUB #######
+################
 ##
 if [ $grub == y ]; then echo "installing grub";
 wget -O 12grub.sh $rootgit/grub.sh; bash 12grub.sh;
 else echo "OK"; fi; cd $inst;
 
 
+################
+## LOGIN #######
+################
 ##
 if [ $login == y ]; then echo "installing login-screen";
 wget -O 12login.sh $rootgit/login.sh; bash 12login.sh;
 else echo "OK"; fi; cd $inst;
 
+################
+## WEBMIN ######
+################
 ##
 if [ $webmin == y ]; then echo "installing webmin";
 wget https://download.webmin.com/devel/tarballs/webmin-current.tar.gz;
@@ -96,12 +136,18 @@ tar -xf webmin-current.tar.gz --strip-components=1;
 ./setup.sh /usr/local/webmin;
 else echo "OK"; fi; cd $inst;
 
+################
+## O L S #######
+################
 ##
 if [ $ols == y ]; then echo "installing openlitespeed";
 wget -O 12ols.sh $rootgit/openlitespeed-wp.sh; bash 12ols.sh;
 else echo "OK"; fi; cd $inst;
 
 
+################
+## CP R  #######
+################
 ##
 if [ $cpr == y ]; then echo "  -- installing cloudpanel.. ";
 apt -y install curl ssh openssh-server openssl;
@@ -112,8 +158,6 @@ apt update; apt -y upgrade;
 read -ep "   -- System will now reboot... Run installer again to install other apps -- " -i "OK" "kkkkkk"
 sleep 1; reboot;
 else echo "OK"; fi; cd $inst;
-
-# mv "/root/.bashrc" "/root/.bashrc-backup"; wget -O "/root/.bashrc" "https://raw.githubusercontent.com/12ants/00/main/bashrc";
 else echo "OK"; fi; cd $inst;
 ##
 ##
@@ -124,17 +168,25 @@ else echo "OK"; fi; cd $inst;
 
 
 
-## 
-if [ $hestia == y ]; then echo "installing hestia";
+################
+## Hestia ######
+################
+##if [ $hestia == y ]; then echo "installing hestia";
 wget -O 12hestia.sh https://raw.githubusercontent.com/hestiacp/hestiacp/release/install/hst-install.sh; chmod 775 ./*; bash 12hestia.sh;
 else echo "OK"; fi; cd $inst;
 
+################
+## GUAKE #######
+################
 ##
 if [ $guake == y ]; then echo "installing guake";
 apt -y install guake;
 else echo "OK"; fi; cd $inst;
 
 
+################
+## XFCE  #######
+################
 ##
 if [ $xfce == y ]; then echo "installing xfce";
 apt install -y -qq xfce4-session xfce4-goodies xfce4-panel alsa synaptic xinit luakit firefox guake    #  minimal desktop env
@@ -152,8 +204,8 @@ sleep .5; echo -e "$purple ---------------------------------------------$re "
 
 ##
 ## end - reboot
-echo -e "$c2 $green https://12ants.github.io/$re $c2$re
+echo -e "$c2 $green https://12ants.github.io/$re $c2$re"
 echo;
-ip
+ipa
 echo;
 
