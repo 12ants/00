@@ -138,7 +138,7 @@ set minibar
 set rawsequences
 
 ## Fix Backspace/Delete confusion problem.
-#set rebinddelete
+set rebinddelete
 
 ## Do regular-expression searches by default.
 ## Regular expressions are of the extended type (ERE).
@@ -202,7 +202,7 @@ set unix
 
 ## Let an unmodified Backspace or Delete erase the marked region (instead
 ## of a single character, and without affecting the cutbuffer).
-# set zap
+set zap
 
 ## Hide the bars plus help lines and use the whole terminal as edit area.
 # set zero
@@ -272,7 +272,7 @@ include "/usr/share/nano/*.nanorc"
 ## keycode, which is hard-bound to the backspace function.  So, if you
 ## normally use <Backspace> for backspacing and not ^H, you can make
 ## <Ctrl+Backspace> delete the word to the left of the cursor with:
-# bind ^H chopwordleft main
+bind ^H chopwordleft main
 
 ## For a more mnemonic Comment keystroke (overriding Cut-from-cursor):
 bind M-K comment main
