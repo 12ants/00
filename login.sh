@@ -1,5 +1,7 @@
 apt install -y ssh fortune cowsay
 cd ~
+
+## On root login perhaps
 echo "/usr/games/fortune | /usr/games/cowsay -pn" >> .bashrc 
 
 ## console login default
@@ -30,22 +32,24 @@ echo '
 
 ## Message after login
 
-echo '
-# /etc/profile: system-wide .profile file for the Bourne shell (sh(1))
-# and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
 
+############################
+#### -- LOGIN SCREEN -- ####
+#### replace "/etc/profile" - system-wide .profile file for the Bourne shell (sh(1))
+mv /etc/profile /etc/profile~
+echo '
 if [ "${PS1-}" ]; then
   if [ "${BASH-}" ] && [ "$BASH" != "/bin/sh" ]; then
     # The file bash.bashrc already sets the default PS1.
-    # PS1='\h:\w\$ '
+    # PS1="\h:\w\$ "
     if [ -f /etc/bash.bashrc ]; then
       . /etc/bash.bashrc
     fi
   else
     if [ "$(id -u)" -eq 0 ]; then
-      PS1='# '
+      PS1="# "
     else
-      PS1='$ '
+      PS1="$ "
     fi
   fi
 fi
@@ -59,10 +63,12 @@ if [ -d /etc/profile.d ]; then
   unset i
 fi
 
-
-######################
-
-echo hello?; tput setaf 7 bold; echo -e "\v\v\v\t";
+#########################
+## -- CUSTOM LINUX --  ##
+#########################
+##
+## --login-screen-- ##
+echo hello?; clear; tput setaf 7 bold; echo -e "\v\v\v\t";
 /usr/games/fortune | /usr/games/cowsay -pn;
 tput setaf 4; read -n1 -ep "
 ------------------------------------
@@ -74,13 +80,10 @@ else ###### ---- [YES] ----- ######
 echo OK
 startx
 fi
-
-
-
-' > /etc/profile 
+' > /etc/profile
 
 echo "
-        hello traveler
+        hello traveler etc motd whaa
 
 " > /etc/motd 
 
