@@ -4,7 +4,7 @@ echo "--  Installing Tard-Grub 2.0..."
 mkdir -p -m 775 /boot/grub/ ; 
 cd /boot/grub/ ;
 # wget https://github.com/12ants/ss/raw/main/tard.jpg ;
-wget -O tard.jpg https://12ants.github.io/00/img/tard2.jpg;
+wget -O tard.jpg https://github.com/12ants/00/raw/main/img/tard2.jpg;
 rm /etc/default/grub.d/*;
 echo '
 GRUB_BACKGROUND="/boot/grub/tard.jpg"
