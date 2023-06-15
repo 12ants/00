@@ -171,7 +171,8 @@ else echo "OK"; fi; cd $inst;
 ################
 ## Hestia ######
 ################
-##if [ $hestia == y ]; then echo "installing hestia";
+##
+if [ $hestia == y ]; then echo "installing hestia";
 wget -O 12hestia.sh https://raw.githubusercontent.com/hestiacp/hestiacp/release/install/hst-install.sh; chmod 775 ./*; bash 12hestia.sh;
 else echo "OK"; fi; cd $inst;
 
