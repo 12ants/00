@@ -82,8 +82,6 @@ echo "%sudo ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10-installer;
 
 ## Install greet screen
 apt -y install fortune cowsay; ln /usr/games/fortune /bin/; ln /usr/games/cowsay /bin/; cd $inst;
-mv /etc/bash.bashrc /etc/bash.bashrc-backup;
-wget -O "/etc/bash.bashrc" "https://github.com/12ants/00/raw/main/bash.bashrc"; 
 
 ## NANO - Improvements ...
 echo "  --  NANO - Improvements ... "
