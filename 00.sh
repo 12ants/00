@@ -65,7 +65,9 @@ read -ep  "  $c2  install$green 4xfce GUI-OS? $re                   [y/n]: " -i 
 echo -e "$purple ---------------------------------------------$re "
 read -ep "  $c2 $yellow begin installation? $re         [y/n]: " -i "n" "continue"
   
-if [ $continue == y ]; then echo -e "\n\n\t --$cyan OK$re -- \n\n"; else exit 1; fi; 
+if [ $continue == y ]; then echo -e "\n\n\t --$cyan OK$re -- \n\n";
+else echo "OK";
+
 ## REMEMER TO CHANGE VAR-NAMES.
 cd $inst;
 
@@ -194,12 +196,12 @@ else echo "OK"; fi; cd $inst;
 
 ## remove install directories
 rm $inst/* -R
-
+ fi; cd /home; echo "  --  goodluck have fun!"
 ##
-sleep .5; echo -e "$purple ---------------------------------------------$re "
-sleep .5; echo -e "$purple ---------------------------------------------$re "
-sleep .5; echo -e "$purple ---------------------------------------------$re "
-sleep .5; echo -e "$purple ---------------------------------------------$re "
+sleep .1; echo -e "$purple ---------------------------------------------$re "
+sleep .1; echo -e "$blue ---------------------------------------------$re "
+sleep .1; echo -e "$green ---------------------------------------------$re "
+sleep .1; echo -e "$red ---------------------------------------------$re "
 
 ##
 ## end - reboot
@@ -207,4 +209,8 @@ echo -e "$c2 $green https://12ants.github.io/$re $c2$re"
 echo;
 ipa
 echo;
+sleep .1; echo -e "$red ---------------------------------------------$re "
+sleep .1; echo -e "$blue ---------------------------------------------$re "
+sleep .1; echo -e "$green ---------------------------------------------$re "
+sleep .1; echo -e "$purple ---------------------------------------------$re "
 
