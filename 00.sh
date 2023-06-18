@@ -155,9 +155,10 @@ else echo "OK"; fi; cd $inst;
 #######################
 ##
 
-################
-## CP R  #######
-################
+##
+#######################
+## LOGIN - DONE #######
+#######################
 ##
 if [ $cpr == y ]; then echo "  -- installing cloudpanel.. ";
 apt -y install curl ssh openssh-server openssl;
