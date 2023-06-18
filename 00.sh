@@ -139,9 +139,10 @@ else echo "OK"; fi; cd $inst;
 ## LGOIN - DONE #######
 #######################
 
-################
-## WEBMIN ######
-################
+##
+#######################
+## LOGIN - DONE #######
+#######################
 ##
 if [ $webmin == y ]; then echo "installing webmin";
 wget https://download.webmin.com/devel/tarballs/webmin-current.tar.gz;
