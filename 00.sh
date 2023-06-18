@@ -107,7 +107,7 @@ echo -e "$c2 $green    --  https://12ants.github.io/$re $c2$re"
 ## - Done setting color to bash ...
 
 else echo "OK"; fi; cd $inst;
-
+##
 ################
 ## BBASH #######
 ################
