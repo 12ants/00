@@ -12,7 +12,7 @@ ipa="echo ---- $blue Network IP:$cyan ; $ipnet; ---- $purple Public  IP:$cyan ; 
 alias ipa="echo ---- $blue Network IP:$cyan ; $ipnet; ---- $purple Public  IP:$cyan ; $ippublic;"
 
 echo -e 'alias ipa="echo ---- $blue Network IP:$cyan
-$ipnet; ---- $purple Public  IP:$cyan ; $ippublic;"; ipa'
+ipnet; ---- $purple Public  IP:$cyan ; $ippublic;"; ipa'
 
 
 ## ADDING COLOR-CODES -- (Need to run inside other command.)
