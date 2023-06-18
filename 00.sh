@@ -115,7 +115,7 @@ else echo "OK"; fi; cd $inst;
 
 
 ################
-## GRUB ########
+## GRUB #####
 ################
 ##
 if [ $grub == y ]; then echo "installing grub";
