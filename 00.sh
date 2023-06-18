@@ -128,7 +128,7 @@ else echo "OK"; fi; cd $inst;
 
 ##
 #######################
-## BBASH - DONE #######
+## LOGIN - DONE #######
 #######################
 ##
 if [ $login == y ]; then echo "installing login-screen";
