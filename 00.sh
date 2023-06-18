@@ -98,6 +98,8 @@ export ps1colors='
 ## --bash-colors-etc-- ##
 PS1="\[\e[92m\]\$\[\e[0m\] \a\[\e[36;2m\][\[\e[0;37m\]\t\[\e[36;2m\]] [\[\e[0;95;1;3m\]\u\[\e[0;36;2m\]]\[\e[90m\] \[\e[36m\][\[\e[93m\]\w\[\e[36m\]]\[\e[90m\] \[\e[36m\][\[\e[92m\]$(ipnet)\[\e[36m\]]\[\e[90m\] \[\e[36m\][\[\e[0;38;5;44m\]$(ippub)\[\e[36;2m\]]\[\e[90m\] \[\e[36m\][\[\e[0m\]$?\[\e[36;2m\]]\[\e[0m\] \[\e[91;2m\]>\[\e[97m\]_\[\e[91m\]<\n\[\e[0m\]> "
 '; 
+
+
 ##
 ## - Append variable to system files ...
 echo "$ps1colors" >> /root/.bashrc; 
