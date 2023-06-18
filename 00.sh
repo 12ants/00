@@ -170,7 +170,11 @@ read -ep "   -- System will now reboot... Run installer again to install other a
 sleep 1; reboot;
 else echo "OK"; fi; cd $inst;
 
-
+##
+#######################
+## LOGIN - DONE #######
+#######################
+##
 else echo "OK"; fi; cd $inst;
 ##
 ##
