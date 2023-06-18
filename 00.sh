@@ -149,6 +149,11 @@ wget https://download.webmin.com/devel/tarballs/webmin-current.tar.gz;
 tar -xf webmin-current.tar.gz --strip-components=1; 
 ./setup.sh /usr/local/webmin;
 else echo "OK"; fi; cd $inst;
+##
+#######################
+## WEBM - DONE #######
+#######################
+##
 
 ################
 ## O L S #######
