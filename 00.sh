@@ -11,7 +11,8 @@ ippub="dig +short myip.opendns.com @resolver1.opendns.com"
 ipa="echo ---- $blue Network IP:$cyan ; $ipnet; ---- $purple Public  IP:$cyan ; $ippublic;"
 alias ipa="echo ---- $blue Network IP:$cyan ; $ipnet; ---- $purple Public  IP:$cyan ; $ippublic;"
 
-echo -e 'alias ipa="echo ---- $blue Network IP:$cyan ; $ipnet; ---- $purple Public  IP:$cyan ; $ippublic;"; ipa'
+echo -e 'alias ipa="echo ---- $blue Network IP:$cyan
+$ipnet; ---- $purple Public  IP:$cyan ; $ippublic;"; ipa'
 
 
 ## ADDING COLOR-CODES -- (Need to run inside other command.)
