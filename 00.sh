@@ -7,6 +7,8 @@ rootgit="https://raw.githubusercontent.com/12ants/00/main";
 ##
 ## Create Backup folder
 mkdir -p /var/backedupconf/
+bufolder="/var/backedupconf/"
+mkdir -p /home/00/ ## install folder
 ## IP SHOW COMMANDS
 ipnet="hostname -I"
 ippublic="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -86,12 +88,12 @@ echo "%sudo ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10-installer;
 apt -y install fortune cowsay; ln /usr/games/fortune /bin/; ln /usr/games/cowsay /bin/; cd $inst;
 ## NANO - Improvements ...
 echo "  --  NANO - Improvements ... "
-mv /etc/nanorc /etc/nanorc-backup; wget -O "/etc/nanorc" "https://github.com/12ants/00/raw/main/nanorc"; 
-## color-bash
-
-
-# backup bashrc to current folder
-mv /etc/bash.bashrc /var/backedupconf/
+mv /etc/nanorc $backupfolder ; wget -O "/etc/nanorc" "https://github.com/12ants/00/raw/main/nanorc"; 
+##
+## COLORS-bash
+# backup prev confing files
+mv /etc/bash.bashrc $bufolder; # backup bashrc root
+mv /home/$SUDO_USER/bash.bashrc $bufolder; # backup bashrc user
 ## fetching bash config from github
 wget -O "/etc/bash.bashrc" $rootgit/bash-upg.sh; ## for root
 wget -O "/home/$SUDO_USER/bash.bashrc" $rootgit/bash-upg.sh; ## for sudo user
@@ -105,8 +107,8 @@ wget -O "/home/$SUDO_USER/bash.bashrc" $rootgit/bash-upg.sh; ## for sudo user
 #echo "$ps1colors" >> /home/PS1_colors.sh; 
 ###
 ##
-echo -e "\n\n\t$gray$c2 Task Complete ... \t [$green Done$re ]$gray$c2 \n\n "; sleep 1
-echo -e "$c2 $green    --  https://12ants.github.io/$re $c2$re"
+echo -e "\n\n\t$gray$c2 Task Complete ... \t [$green Done$re ]$gray$c2 \n\n "; sleep 1;
+echo -e "$c2 $green    --  https://12ants.github.io/$re $c2$re"; sleep 1;
 
 ##
 ## - Done setting color to bash ...
@@ -217,8 +219,9 @@ rm $inst* -R
 ##
 #####################
 else echo "OK"; fi; cd $inst;
+
 fi; cd /home; echo "    --  goodluck have fun!"
-fi
+
 ##
 sleep .1; echo -e "$purple ---------------------------------------------$re "
 sleep .1; echo -e "$blue ---------------------------------------------$re "
