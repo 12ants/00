@@ -4,7 +4,6 @@
 if [ $UID != 0 ]; then echo -e " \n\n\t This script must be run as root... try command: [ sudo -s ] \n\n " 1>&2; exit 1; fi; ## ROOT-CHECK
 reset
 rootgit="https://raw.githubusercontent.com/12ants/00/main";
-
 ## IP SHOW COMMANDS
 ipnet="hostname -I"
 ippublic="dig +short myip.opendns.com @resolver1.opendns.com"
