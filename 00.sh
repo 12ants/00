@@ -169,7 +169,6 @@ apt update; apt -y upgrade;
 read -ep "   -- System will now reboot... Run installer again to install other apps -- " -i "OK" "kkkkkk"
 sleep 1; reboot;
 else echo "OK"; fi; cd $inst;
-
 ##
 #######################
 ## CLOUDPANEL - DONE ##
