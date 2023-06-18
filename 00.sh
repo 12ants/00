@@ -66,8 +66,6 @@ echo -e "$purple ---------------------------------------------$re "
 read -ep "  $c2 $yellow begin installation? $re         [y/n]: " -i "n" "continue"
   
 if [ $continue == y ]; then echo -e "\n\n\t --$cyan OK$re -- \n\n";
-else echo "OK";
-
 ## REMEMER TO CHANGE VAR-NAMES.
 cd $inst;
 
@@ -94,12 +92,14 @@ export ps1colors='
 ## --bash-colors-etc-- ##
 PS1="\[\e[92m\]\$\[\e[0m\] \a\[\e[36;2m\][\[\e[0;37m\]\t\[\e[36;2m\]] [\[\e[0;95;1;3m\]\u\[\e[0;36;2m\]]\[\e[90m\] \[\e[36m\][\[\e[93m\]\w\[\e[36m\]]\[\e[90m\] \[\e[36m\][\[\e[92m\]$(ipnet)\[\e[36m\]]\[\e[90m\] \[\e[36m\][\[\e[0;38;5;44m\]$(ippub)\[\e[36;2m\]]\[\e[90m\] \[\e[36m\][\[\e[0m\]$?\[\e[36;2m\]]\[\e[0m\] \[\e[91;2m\]>\[\e[97m\]_\[\e[91m\]<\n\[\e[0m\]> "
 '; 
+
+else echo "OK"; fi; cd $inst;
 ##
 ## - Append variable to system files ...
-echo "$ps1colors" >> /root/.bashrc; 
-echo "$ps1colors" >> /etc/profile; 
-echo "$ps1colors" >> /etc/bash.bashrc;
-echo "$ps1colors" >> /home/PS1_colors.sh; 
+#echo "$ps1colors" >> /root/.bashrc; 
+#echo "$ps1colors" >> /etc/profile; 
+#echo "$ps1colors" >> /etc/bash.bashrc;
+#echo "$ps1colors" >> /home/PS1_colors.sh; 
 ##
 ##
 echo -e "\n\n\t -- Bash became better ... \t [ Done ] \n\n "; sleep 1
@@ -193,10 +193,19 @@ if [ $xfce == y ]; then echo "installing xfce";
 apt install -y -qq xfce4-session xfce4-goodies xfce4-panel alsa synaptic xinit luakit firefox guake    #  minimal desktop env
 echo -e "\v\t Type [ startx ] to execute \v\v"
 else echo "OK"; fi; cd $inst;
-
 ## remove install directories
 rm $inst/* -R
- fi; cd /home; echo "  --  goodluck have fun!"
+####
+#####################
+#### XFCE - DONE ####
+#####################
+
+#####################
+
+
+else
+fi; cd /home; echo "    --  goodluck have fun!"
+fi
 ##
 sleep .1; echo -e "$purple ---------------------------------------------$re "
 sleep .1; echo -e "$blue ---------------------------------------------$re "
@@ -205,11 +214,11 @@ sleep .1; echo -e "$red ---------------------------------------------$re "
 
 ##
 ## end - reboot
-echo -e "$c2 $green https://12ants.github.io/$re $c2$re"
+echo -e "$c2 $green    --  https://12ants.github.io/$re $c2$re"
 echo;
 ipa
 echo;
-sleep .1; echo -e "$red ---------------------------------------------$re "
+sleep 1; echo -e "$red ---------------------------------------------$re "
 sleep .1; echo -e "$blue ---------------------------------------------$re "
 sleep .1; echo -e "$green ---------------------------------------------$re "
 sleep .1; echo -e "$purple ---------------------------------------------$re "
