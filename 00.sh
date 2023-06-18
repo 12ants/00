@@ -105,10 +105,10 @@ PS1='\[\e[92;2;4m\]\$\[\e[0m\] [\[\e[95m\]$?\a\[\e[0;2m\].\[\e[90m\]\t\[\e[0m\]]
 
 echo '
  alias "ipnet"="hostname -I | head -c 13";
-109 alias "ippub"="dig +short myip.opendns.com @resolver1.opendns.com";
-110 alias "ipports"="sudo lsof -i -P -n";
-111 alias "ip"='echo ;
-112 echo " $(tput setaf 6) ------$(tput setaf 2) Public IP: $(tput sgr0)$(ippub)$(tput setaf 6)";
+alias "ippub"="dig +short myip.opendns.com @resolver1.opendns.com";
+alias "ipports"="sudo lsof -i -P -n";
+alias "ip"='echo ;
+echo " $(tput setaf 6) ------$(tput setaf 2) Public IP: $(tput sgr0)$(ippub)$(tput setaf 6)";
 113 echo " $(tput setaf 6) ---------------------------------- " ;
 114 echo " $(tput setaf 6) ------$(tput setaf 4) Network IP: $(tput sgr0)$(ipnet)$(tput setaf 6)";
 115 echo ; '
