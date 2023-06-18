@@ -82,7 +82,6 @@ echo "%sudo ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10-installer;
 ##
 ## Install greet screen
 apt -y install fortune cowsay; ln /usr/games/fortune /bin/; ln /usr/games/cowsay /bin/; cd $inst;
-
 ## NANO - Improvements ...
 echo "  --  NANO - Improvements ... "
 mv /etc/nanorc /etc/nanorc-backup; wget -O "/etc/nanorc" "https://github.com/12ants/00/raw/main/nanorc"; 
