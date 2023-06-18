@@ -97,6 +97,9 @@ mv /home/$SUDO_USER/bash.bashrc $bufolder; # backup bashrc user
 ## fetching bash config from github
 wget -O "/etc/bash.bashrc" $rootgit/bash-upg.sh; ## for root
 wget -O "/home/$SUDO_USER/bash.bashrc" $rootgit/bash-upg.sh; ## for sudo user
+
+
+
 ##
 ## delete?
 ##
