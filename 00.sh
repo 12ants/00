@@ -151,7 +151,7 @@ tar -xf webmin-current.tar.gz --strip-components=1;
 else echo "OK"; fi; cd $inst;
 ##
 #######################
-## WEBMIN - DONE #######
+## WEBMIN - DONE ######
 #######################
 ##
 
