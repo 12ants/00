@@ -20,7 +20,7 @@ left2=$(tput cub 2) up1=$(tput cuu1) c75="  ------------------------------------
 inst="/home/00/"; mkdir -p $inst; chmod 775 $inst; clear;
 echo -e "
   $c2  Welcome to$pink Linux-tweaks$re by$green 12ants.com$re
-  $c2  Please choose preferred actions \n \n ";
+  $c2  Please choose preferred actions \n \n "; 
 read -ep "  $c2  Root repo for install-files: [Press Enter to continue] " -i "${rootgit}" rootgit;
 read -ep "  $c2  update system? [y/n]: " -i "n" "upsys";
 ##
