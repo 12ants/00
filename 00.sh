@@ -155,14 +155,6 @@ else echo "OK"; fi; cd $inst;
 #######################
 ##
 
-################
-## O L S #######
-################
-##
-if [ $ols == y ]; then echo "installing openlitespeed";
-wget -O 12ols.sh $rootgit/openlitespeed-wp.sh; bash 12ols.sh;
-else echo "OK"; fi; cd $inst;
-
 
 ################
 ## CP R  #######
