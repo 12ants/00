@@ -116,7 +116,7 @@ else echo "OK"; fi; cd $inst;
 
 ######################
 ## GRUB #####
-################
+######################
 ##
 if [ $grub == y ]; then echo "installing grub";
 wget -O 12grub.sh $rootgit/grub.sh; bash 12grub.sh;
