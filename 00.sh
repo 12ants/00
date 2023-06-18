@@ -207,9 +207,6 @@ else echo "OK"; fi; cd $inst;
 ## remove install directories
 rm $inst/* -R
 ## // XFCE - Done
-#####################
-#### XFCE - DONE ####
-#####################
 ##
 ##
 
