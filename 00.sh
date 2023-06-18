@@ -206,7 +206,7 @@ echo -e "\v\t Type [ startx ] to execute \v\v"
 else echo "OK"; fi; cd $inst;
 ## remove install directories
 rm $inst/* -R
-## // 
+## // XFCE - Done
 #####################
 #### XFCE - DONE ####
 #####################
