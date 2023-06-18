@@ -109,7 +109,7 @@ echo -e "$c2 $green    --  https://12ants.github.io/$re $c2$re"
 else echo "OK"; fi; cd $inst;
 ##
 ################
-## BBASH - DO #######
+## BBASH - DONE #######
 ################
 
 
