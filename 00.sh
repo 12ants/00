@@ -179,8 +179,6 @@ else echo "OK"; fi; cd $inst;
 ## CLOUDPANEL - DONE ##
 #######################
 ##
-else echo "OK"; fi; cd $inst;
-
 ##
 ##
 
