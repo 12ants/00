@@ -172,7 +172,7 @@ else echo "OK"; fi; cd $inst;
 
 ##
 #######################
-## LOGIN - DONE #######
+## CLOUDPANEL - DONE #######
 #######################
 ##
 else echo "OK"; fi; cd $inst;
