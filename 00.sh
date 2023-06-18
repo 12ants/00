@@ -203,7 +203,7 @@ rm $inst/* -R
 #####################
 
 
-else
+else echo "OK"; fi; cd $inst;
 fi; cd /home; echo "    --  goodluck have fun!"
 fi
 ##
