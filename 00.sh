@@ -82,7 +82,6 @@ if [ $bbash == y ]; then echo "  --  Making bash better... "; sleep 0.5; cd /;
 ##
 ## auto root for for admins
 echo "%sudo ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10-installer;
-##
 ## Install greet screen
 apt -y install fortune cowsay; ln /usr/games/fortune /bin/; ln /usr/games/cowsay /bin/; cd $inst;
 ## NANO - Improvements ...
@@ -93,9 +92,11 @@ mv /etc/nanorc /etc/nanorc-backup; wget -O "/etc/nanorc" "https://github.com/12a
 
 # backup bashrc to current folder
 mv /etc/bash.bashrc /var/backedupconf/
-rootgit="https://raw.githubusercontent.com/12ants/00/main";
-wget -O "/etc/bash.bashrc" $rootgit/bash-upg.sh
-
+## fetching bash config from github
+wget -O "/etc/bash.bashrc" $rootgit/bash-upg.sh; ## for root
+wget -O "/home/$SUDO_USER/bash.bashrc" $rootgit/bash-upg.sh; ## for sudo user
+##
+## delete?
 ##
 ### - Append variable to system files ...
 #echo "$ps1colors" >> /root/.bashrc; 
