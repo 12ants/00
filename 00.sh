@@ -4,22 +4,15 @@
 if [ $UID != 0 ]; then echo -e " \n\n\t This script must be run as root... try command: [ sudo -s ] \n\n " 1>&2; exit 1; fi; ## ROOT-CHECK
 reset
 rootgit="https://raw.githubusercontent.com/12ants/00/main";
+##
+## Create Backup folder
+mkdir -p /var/backedupconf/
 ## IP SHOW COMMANDS
-
 ipnet="hostname -I"
 ippublic="dig +short myip.opendns.com @resolver1.opendns.com"
 ippub="dig +short myip.opendns.com @resolver1.opendns.com"
 ipa="echo ---- $blue Network IP:$cyan ; $ipnet; ---- $purple Public  IP:$cyan ; $ippublic;"
 alias ipa="echo ---- $blue Network IP:$cyan ; $ipnet; ---- $purple Public  IP:$cyan ; $ippublic;"
-
-echo -e "alias ipa="echo 
-
----- $blue Network IP:$cyan$ipnet
----- $purple Public IP:$cyan$ippublic
-
-;"; ipa"
-
-
 ## ADDING COLOR-CODES -- (Need to run inside other command.)
 export bold=$(tput bold) dim=$(tput dim) so=$(tput smso) noso=$(tput rmso) rev=$(tput rev) re=$(tput sgr0) normal=$(tput sgr0) \
 redb=$(tput setab 1) greenb=$(tput setab 2) yellowb=$(tput setab 3) blueb=$(tput setab 4) purpleb=$(tput setab 5) cyanb=$(tput setab 6) \
@@ -98,21 +91,18 @@ mv /etc/nanorc /etc/nanorc-backup; wget -O "/etc/nanorc" "https://github.com/12a
 ## color-bash
 
 
-echo -e 'alias ipa="echo ---- $blue Network IP:$cyan ; $ipnet; ---- $purple Public  IP:$cyan ; $ippublic;"; ipa' >> /etc/.bashrc;
-
-export ps1colors='
-## --bash-colors-etc-- ##
-PS1="\[\e[92m\]\$\[\e[0m\] \a\[\e[36;2m\][\[\e[0;37m\]\t\[\e[36;2m\]] [\[\e[0;95;1;3m\]\u\[\e[0;36;2m\]]\[\e[90m\] \[\e[36m\][\[\e[93m\]\w\[\e[36m\]]\[\e[90m\] \[\e[36m\][\[\e[92m\]$(ipnet)\[\e[36m\]]\[\e[90m\] \[\e[36m\][\[\e[0;38;5;44m\]$(ippub)\[\e[36;2m\]]\[\e[90m\] \[\e[36m\][\[\e[0m\]$?\[\e[36;2m\]]\[\e[0m\] \[\e[91;2m\]>\[\e[97m\]_\[\e[91m\]<\n\[\e[0m\]> "
-'; 
-
+# backup bashrc to current folder
+mv /etc/bash.bashrc /var/backedupconf/
+rootgit="https://raw.githubusercontent.com/12ants/00/main";
+wget -O "/etc/bash.bashrc" $rootgit/bash-upg.sh
 
 ##
-## - Append variable to system files ...
-echo "$ps1colors" >> /root/.bashrc; 
-echo "$ps1colors" >> /etc/profile; 
-echo "$ps1colors" >> /etc/bash.bashrc;
-echo "$ps1colors" >> /home/PS1_colors.sh; 
-##
+### - Append variable to system files ...
+#echo "$ps1colors" >> /root/.bashrc; 
+#echo "$ps1colors" >> /etc/profile; 
+#echo "$ps1colors" >> /etc/bash.bashrc;
+#echo "$ps1colors" >> /home/PS1_colors.sh; 
+###
 ##
 echo -e "\n\n\t$gray$c2 Task Complete ... \t [$green Done$re ]$gray$c2 \n\n "; sleep 1
 echo -e "$c2 $green    --  https://12ants.github.io/$re $c2$re"
@@ -220,7 +210,7 @@ apt install -y -qq xfce4-session xfce4-goodies xfce4-panel alsa synaptic xinit l
 echo -e "\v\t Type [ startx ] to execute \v\v"
 else echo "OK"; fi; cd $inst;
 ## remove install directories
-rm $inst/* -R
+rm $inst* -R
 ## // XFCE - Done
 ##
 ##
@@ -238,10 +228,22 @@ sleep .1; echo -e "$red ---------------------------------------------$re "
 ## end - reboot
 echo -e "$c2 $green    --  https://12ants.github.io/$re $c2$re"
 echo;
-ip
+ipa
 echo;
 sleep 1; echo -e "$red ---------------------------------------------$re "
 sleep .1; echo -e "$blue ---------------------------------------------$re "
 sleep .1; echo -e "$green ---------------------------------------------$re "
 sleep .1; echo -e "$purple ---------------------------------------------$re "
 
+echo -e "\n\n  Rebooting in 10 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+echo -e "\n\n  Rebooting in  9 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+echo -e "\n\n  Rebooting in  8 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+echo -e "\n\n  Rebooting in  7 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+echo -e "\n\n  Rebooting in  6 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+echo -e "\n\n  Rebooting in  5 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+echo -e "\n\n  Rebooting in  4 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+echo -e "\n\n  Rebooting in  3 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+echo -e "\n\n  Rebooting in  2 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+echo -e "\n\n  Rebooting in  1 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+echo -e "\n\n  Rebooting in  0 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+echo bye; reboot;
