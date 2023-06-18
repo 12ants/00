@@ -14,7 +14,8 @@ alias ipa="echo ---- $blue Network IP:$cyan ; $ipnet; ---- $purple Public  IP:$c
 echo -e 'alias ipa="echo 
 
 ---- $blue Network IP:$cyan$ipnet
----- $purple Public IP:$cyan$ippublic;
+---- $purple Public IP:$cyan$ippublic
+
 "; ipa'
 
 
