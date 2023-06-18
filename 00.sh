@@ -177,6 +177,8 @@ else echo "OK"; fi; cd $inst;
 else echo "OK"; fi; cd $inst;
 ##
 ##
+
+
 if [ $cpc == y ]; then echo "installing cloudpanel";
 wget -O 12cloudpanel.sh $rootgit/cloudpanel_ask.sh && bash 12cloudpanel.sh;
 else echo "OK"; fi; cd $inst;
