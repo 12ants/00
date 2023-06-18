@@ -91,6 +91,7 @@ echo "  --  NANO - Improvements ... "
 mv /etc/nanorc /etc/nanorc-backup; wget -O "/etc/nanorc" "https://github.com/12ants/00/raw/main/nanorc"; 
 ## color-bash
 
+
 alias ipa="echo ---- $blue Network IP:$cyan ; $ipnet; ---- $purple Public  IP:$cyan ; $ippublic;"
 
 export ps1colors='
