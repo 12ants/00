@@ -157,7 +157,7 @@ else echo "OK"; fi; cd $inst;
 
 ##
 #######################
-## CLOUDPANEL - DONE #######
+## CLOUDPANEL #######
 #######################
 ##
 if [ $cpr == y ]; then echo "  -- installing cloudpanel.. ";
