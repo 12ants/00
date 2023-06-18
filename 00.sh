@@ -103,6 +103,8 @@ else echo "OK"; fi; cd $inst;
 ##
 ##
 echo -e "\n\n\t -- Bash became better ... \t [ Done ] \n\n "; sleep 1
+echo -e "$c2 $green    --  https://12ants.github.io/$re $c2$re"
+
 ##
 ## - Done setting color to bash ...
 ## - Done setting color to bash ...
