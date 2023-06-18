@@ -80,7 +80,6 @@ if [ $bbash == y ]; then echo "  --  Making bash better... "; sleep 0.5; cd /;
 ## auto root for for admins
 echo "%sudo ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10-installer;
 ##
-
 ## Install greet screen
 apt -y install fortune cowsay; ln /usr/games/fortune /bin/; ln /usr/games/cowsay /bin/; cd $inst;
 
