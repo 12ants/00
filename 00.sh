@@ -194,8 +194,8 @@ if [ $guake == y ]; then echo "installing guake";
 apt -y install guake;
 else echo "OK"; fi; cd $inst;
 ## // GUAKE
-
-
+##
+##
 ################
 ## XFCE  #######
 ################
