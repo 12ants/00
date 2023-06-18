@@ -7,8 +7,7 @@ rootgit="https://raw.githubusercontent.com/12ants/00/main";
 ipnet="hostname -I"
 ippublic="dig +short myip.opendns.com @resolver1.opendns.com"
 ippub="dig +short myip.opendns.com @resolver1.opendns.com"
-ipa="echo -
--- $blue Network IP:$cyan "; $ipnet;
+ipa="echo --- $blue Network IP:$cyan "; $ipnet;
 echo -n "    -- $purple Public  IP:$cyan "; $ippublic;"
 
 
