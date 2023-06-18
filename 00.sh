@@ -93,7 +93,7 @@ mv /etc/nanorc $backupfolder ; wget -O "/etc/nanorc" "https://github.com/12ants/
 ## COLORS-bash
 # backup prev confing files
 mv /etc/bash.bashrc $bufolder; # backup bashrc root
-mv /home/$SUDO_USER/bash.bashrc $bufolder; # backup bashrc user
+mv /home/$SUDO_USER/.bashrc $bufolder; # backup bashrc user
 ## fetching bash config from github
 wget -O "/etc/bash.bashrc" $rootgit/bash-upg.sh; ## for root
 wget -O "/home/$SUDO_USER/bash.bashrc" $rootgit/bash-upg.sh; ## for sudo user
