@@ -210,8 +210,6 @@ rm $inst/* -R
 ##
 ##
 #####################
-
-
 else echo "OK"; fi; cd $inst;
 fi; cd /home; echo "    --  goodluck have fun!"
 fi
