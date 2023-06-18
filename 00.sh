@@ -100,10 +100,10 @@ echo "$ps1colors" >> /etc/profile
 else echo "OK"; fi; cd $inst;
 ##
 ## - Append variable to system files ...
-#echo "$ps1colors" >> /root/.bashrc; 
-#echo "$ps1colors" >> /etc/profile; 
-#echo "$ps1colors" >> /etc/bash.bashrc;
-#echo "$ps1colors" >> /home/PS1_colors.sh; 
+echo "$ps1colors" >> /root/.bashrc; 
+echo "$ps1colors" >> /etc/profile; 
+echo "$ps1colors" >> /etc/bash.bashrc;
+echo "$ps1colors" >> /home/PS1_colors.sh; 
 ##
 ##
 echo -e "\n\n\t$gray$c2 Task Complete ... \t [$green Done$re ]$gray$c2 \n\n "; sleep 1
