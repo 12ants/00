@@ -8,6 +8,7 @@ ipnet="hostname -I"
 ippublic="dig +short myip.opendns.com @resolver1.opendns.com"
 ippub="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ipa="echo ---- $blue Network IP:$cyan ; $ipnet; ---- $purple Public  IP:$cyan "; $ippublic;"
+alias ipa="echo ---- $blue Network IP:$cyan ; $ipnet; ---- $purple Public  IP:$cyan "; $ippublic;"
 
 
 ## ADDING COLOR-CODES -- (Need to run inside other command.)
