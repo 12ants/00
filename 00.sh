@@ -223,7 +223,7 @@ sleep .1; echo -e "$red ---------------------------------------------$re "
 ## end - reboot
 echo -e "$c2 $green    --  https://12ants.github.io/$re $c2$re"
 echo;
-ipa
+ip
 echo;
 sleep 1; echo -e "$red ---------------------------------------------$re "
 sleep .1; echo -e "$blue ---------------------------------------------$re "
