@@ -85,7 +85,6 @@ apt -y install fortune cowsay; ln /usr/games/fortune /bin/; ln /usr/games/cowsay
 ## NANO - Improvements ...
 echo "  --  NANO - Improvements ... "
 mv /etc/nanorc /etc/nanorc-backup; wget -O "/etc/nanorc" "https://github.com/12ants/00/raw/main/nanorc"; 
-
 ## color-bash
 export ps1colors='
 ## --bash-colors-etc-- ##
