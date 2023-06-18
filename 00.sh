@@ -96,7 +96,7 @@ mv /etc/bash.bashrc $bufolder; # backup bashrc root
 mv /home/$SUDO_USER/bash.bashrc $bufolder; # backup bashrc user
 ## fetching bash config from github
 wget -O "/etc/bash.bashrc" $rootgit/bash-upg.sh; ## for root
-wget -O "/home/$SUDO_USER/bash.bashrc" $rootgit/bash-upg.sh; ## for sudo userPS1='\[\e[92;2;4m\]\$\[\e[0m\] [\[\e[95m\]$?\a\[\e[0;2m\].\[\e[90m\]\t\[\e[0m\]]\[\e[2m\].\[\e[0m\][\[\e[92;2m\]$(ipnet)\[\e[0m\]]\[\e[2m\].\[\e[0m\][\[\e[36;1;3;4;53m\]\u\[\e[0m\]]\[\e[2m\].\[\e[0m\][\[\e[93;2m\]\w\[\e[0m\]] >\[\e[2;4m\]_\[\e[0m\]' >> /etc/bash.bashrc
+wget -O "/home/$SUDO_USER/bash.bashrc" $rootgit/bash-upg.sh; ## for sudo user
 
 
 
