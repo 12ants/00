@@ -102,7 +102,7 @@ else echo "OK"; fi; cd $inst;
 #echo "$ps1colors" >> /home/PS1_colors.sh; 
 ##
 ##
-echo -e "\n\n\t -- Bash became better ... \t [ $c2 $green Done $re $c2$re ] \n\n "; sleep 1
+echo -e "\n\n\t -- Bash became better ... \t [ $c2 $green Done  ] \n\n "; sleep 1
 echo -e "$c2 $green    --  https://12ants.github.io/$re $c2$re"
 
 ##
