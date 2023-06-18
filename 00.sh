@@ -92,7 +92,7 @@ mv /etc/nanorc /etc/nanorc-backup; wget -O "/etc/nanorc" "https://github.com/12a
 ## color-bash
 
 
-echo alias ipa="echo ---- $blue Network IP:$cyan ; $ipnet; ---- $purple Public  IP:$cyan ; $ippublic;" "
+echo alias ipa="echo ---- $blue Network IP:$cyan ; $ipnet; ---- $purple Public  IP:$cyan ; $ippublic;" 
 
 export ps1colors='
 ## --bash-colors-etc-- ##
