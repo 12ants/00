@@ -219,26 +219,22 @@ rm $inst* -R
 ##
 #####################
 else echo "OK"; fi; cd $inst;
-
-fi; cd /home; echo "    --  goodluck have fun!"
-
+cd /home; echo -e "\n\n    --  goodluck have fun! \n\n"
+####################
 ##
-sleep .1; echo -e "$purple ---------------------------------------------$re "
-sleep .1; echo -e "$blue ---------------------------------------------$re "
-sleep .1; echo -e "$green ---------------------------------------------$re "
-sleep .1; echo -e "$red ---------------------------------------------$re "
-
-##
-## end - reboot
-echo -e "$c2 $green    --  https://12ants.github.io/$re $c2$re"
-echo;
-ipa
-echo;
-sleep 1; echo -e "$red ---------------------------------------------$re "
-sleep .1; echo -e "$blue ---------------------------------------------$re "
-sleep .1; echo -e "$green ---------------------------------------------$re "
-sleep .1; echo -e "$purple ---------------------------------------------$re "
-
+## end installer
+## 
+ipa 
+sleep .1; echo -e "\n\n\t\t $purple ---------------------------------------------$re "
+sleep .1; echo -e "\t\t $blue ---------------------------------------------$re "
+sleep .1; echo -e "\t\t $green ---------------------------------------------$re "
+sleep .1; echo -e "\t\t $red ---------------------------------------------$re "
+echo -e "\t\t $c2 $green        --  https://12ants.github.io/$re $c2$re"; echo;
+sleep 1; echo -e " \t\t $red ---------------------------------------------$re "
+sleep .1; echo -e " \t\t $blue ---------------------------------------------$re "
+sleep .1; echo -e "\t\t $green ---------------------------------------------$re "
+sleep .1; echo -e "\t\t $purple ---------------------------------------------$re "
+## reboot countdown
 echo -e "\n\n  Rebooting in 10 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
 echo -e "\n\n  Rebooting in  9 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
 echo -e "\n\n  Rebooting in  8 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
