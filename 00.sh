@@ -88,7 +88,7 @@ echo "%sudo ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10-installer;
 apt -y install fortune cowsay; ln /usr/games/fortune /bin/; ln /usr/games/cowsay /bin/; cd $inst;
 ## NANO - Improvements ...
 echo "  --  NANO - Improvements ... "
-mv /etc/nanorc $backupfolder ; wget -O "/etc/nanorc" "https://github.com/12ants/00/raw/main/nanorc"; 
+mv /etc/nanorc $bufolder ; wget -O "/etc/nanorc" "https://github.com/12ants/00/raw/main/nanorc"; 
 ##
 ## COLORS-bash
 # backup prev confing files
