@@ -95,14 +95,7 @@ wget -O "/etc/bash.bashrc" $rootgit/etcbash.sh; ## for root
 # user
 #echo 'PS1="\[\e[92;2;4m\]\$\[\e[0m\] [\[\e[95m\]$?\a\[\e[0;2m\].\[\e[90m\]\t\[\e[0m\]]\[\e[2m\].\[\e[0m\][\[\e[92;2m\]$(ipnet)\[\e[0m\]]\[\e[2m\].\[\e[0m\][\[\e[36;1;3;4;53m\]\u\[\e[0m\]]\[\e[2m\].\[\e[0m\][\[\e[93;2m\]\w\[\e[0m\]] >\[\e[2;4m\]_\[\e[0m\]"' >> /etc/bash.bashrc
 ##
-## delete?
-##
-### - Append variable to system files ...
-#echo "$ps1colors" >> /root/.bashrc; 
-#echo "$ps1colors" >> /etc/profile; 
-#echo "$ps1colors" >> /etc/bash.bashrc;
-#echo "$ps1colors" >> /home/PS1_colors.sh; 
-###
+
 ##
 sleep .4; 
 sleep .4; echo -e "\n\n\t$gray$c2 Task ... [$green Done$re ]$gray$c2 \n\n"; sleep 1;
