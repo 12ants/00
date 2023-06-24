@@ -1,5 +1,6 @@
 #!/bin/bash
 ## LOGIN TWEAKS
+
 sudo apt install -y ssh fortune cowsay
 ## console login default
 systemctl set-default multi-user.target
