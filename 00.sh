@@ -97,7 +97,7 @@ mv /home/$SUDO_USER/.bashrc $bufolder; # backup bashrc user
 mv /root/.bashrc $bufolder.bashrc-root;
 
 ## fetching bash config from github
-wget -O "/etc/bash.bashrc" $rootgit/.sh; ## for root
+wget -O "/etc/bash.bashrc" $rootgit/etc.sh; ## for root
 # wget -O "/home/$SUDO_USER/.bashrc" $rootgit/bash-upg.sh; ## for sudo user
 
 
