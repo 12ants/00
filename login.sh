@@ -25,13 +25,7 @@ echo '
 
 
 ## Message after login
-echo 'alias loginscreen="read -n1 -ep "  --  Choose default login screen, [G]raphical or  [t]erminal?: " "yn";
-if [ "$lscreen" != "${lscreen#[Gg]}" ];
-then echo Graphical; systemctl set-default graphical.target;
-else echo Terminal; systemctl set-default multi-user.target;
-fi
-loginscreen"'
->> /etc/profile
+
 ############################
 #### -- LOGIN SCREEN -- ####
 #### replace "/etc/profile" - system-wide .profile file for the Bourne shell (sh(1))
