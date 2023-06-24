@@ -50,7 +50,6 @@ else ###### ---- [YES] ----- ######
 echo OK
 startx
 fi
-
 ' > /etc/profile
 
 echo "
