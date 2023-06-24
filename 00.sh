@@ -118,7 +118,7 @@ wget -O "/etc/bash.bashrc" $rootgit/etcbash.sh; ## for root
 #echo "$ps1colors" >> /home/PS1_colors.sh; 
 ###
 ##
-echo -e "\n\n\t$gray$c2 Task Complete ... \t [$green Done$re ]$gray$c2 \n\n "; sleep 1;
+sleepecho -e "\n\n\t$gray$c2 Task Complete ... \t [$green Done$re ]$gray$c2 \n\n "; sleep 1;
 echo -e "$c2 $green    --  https://12ants.github.io/$re $c2$re"; sleep 1;
 
 ##
