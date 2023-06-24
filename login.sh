@@ -1,30 +1,20 @@
-#!/bin/bash
-## LOGIN TWEAKS
-##
-sudo apt install -y ssh fortune cowsay
+apt install -y ssh fortune cowsay
+cd ~
+
+## On root login perhaps
+echo "/usr/games/fortune | /usr/games/cowsay -pn" >> .bashrc 
+
 ## console login default
-#systemctl set-default multi-user.target
-## gui def
-#systemctl set-default graphical.target
-
-
-read -n1 -ep "  --  Choose default login screen [t]erminal or [g]raphical?: " "loginscreen"
-## Message before login
-if [ $loginscreen == "t" ]; then 
 systemctl set-default multi-user.target
-fi
+## gui def
+## sudo systemctl set-default graphical.target
+
+## Message before login
+
+## echo "Hello login" > /etc/issue /etc/ssh/sshd-banner
+## echo "Banner /etc/ssh/sshd-banner" > /etc/ssh/sshd-config
 
 
-
-alias loginscreen='read -n1 -ep "  --  Choose default login screen [T]erminal or [G]raphical?: " "yn";
-if [ "$lscreen" != "${lscreen#[Gg]}" ];
-then echo Graphical; systemctl set-default graphical.target;
-else echo Terminal; systemctl set-default multi-user.target;
-fi
-'
-
-## echo "Hello login" >> /etc/issue /etc/ssh/sshd-banner
-echo "Banner /etc/ssh/sshd-banner" >> /etc/ssh/sshd-config
 echo '
 
   Welcome to 12ants.com -- today is \d \t @ \n
@@ -46,7 +36,7 @@ echo '
 ############################
 #### -- LOGIN SCREEN -- ####
 #### replace "/etc/profile" - system-wide .profile file for the Bourne shell (sh(1))
-mv /etc/profile /etc/profile~bu
+mv /etc/profile /etc/profile~
 echo '
 if [ "${PS1-}" ]; then
   if [ "${BASH-}" ] && [ "$BASH" != "/bin/sh" ]; then
@@ -78,7 +68,7 @@ fi
 #########################
 ##
 ## --login-screen-- ##
-echo hello?; tput cup 1; tput setaf 7 bold; echo -e "\v\v\v\t";
+echo hello?; clear; tput setaf 7 bold; echo -e "\v\v\v\t";
 /usr/games/fortune | /usr/games/cowsay -pn;
 tput setaf 4; read -n1 -ep "
 ------------------------------------
