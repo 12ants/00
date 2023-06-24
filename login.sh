@@ -10,7 +10,7 @@ systemctl set-default graphical.target
 
 read -n1 -ep "  --  Choose default login screen [t]erminal or [g]raphical?: " "loginscreen"
 ## Message before login
-if [ $log]
+if [ $loginscreen == ]
 ## echo "Hello login" >> /etc/issue /etc/ssh/sshd-banner
 echo "Banner /etc/ssh/sshd-banner" >> /etc/ssh/sshd-config
 echo '
