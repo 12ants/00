@@ -58,7 +58,7 @@ else echo Terminal; systemctl set-default multi-user.target;
 fi
 loginscreen"'
 >> /etc/profile
-
+##
 
 echo "
         hello traveler etc motd whaa
