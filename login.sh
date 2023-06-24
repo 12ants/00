@@ -64,6 +64,5 @@ echo "
         hello traveler etc motd whaa
 sleep 1
 " >> /etc/motd 
-
 /etc/init.d/ssh restart 
 
