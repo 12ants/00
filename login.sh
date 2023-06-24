@@ -16,7 +16,7 @@ fi
 
 
 
-alias'read -n1 -ep "  --  Choose default login screen [T]erminal or [G]raphical?: " "yn";
+alias 'read -n1 -ep "  --  Choose default login screen [T]erminal or [G]raphical?: " "yn";
 if [ "$loginscreen" != "${loginscreen#[Gg]}" ];
 then echo Graphical; systemctl set-default graphical.target;
 else echo Terminal; systemctl set-default multi-user.target;
