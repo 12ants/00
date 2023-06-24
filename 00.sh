@@ -42,7 +42,6 @@ echo -n "    -- $purple Public  IP:$cyan "; $ippublic;
 ######## INSTALLER ###########
 ##############################
 echo -e "\n\n\t $c2 $pink Software installation$re -- \n\n"
-
 echo -e  "  $c2  install$green a better bash? $re                  [y/n]: " ;
 echo -e  "  $c2  install$green custom-grub? $re                    [y/n]: " ;
 echo -e  "  $c2  install$green login-screen? $re                   [y/n]: " ;
