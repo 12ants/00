@@ -125,7 +125,6 @@ sleep .4;
 ##
 ## - Done setting color to bash ...
 ## - Done setting color to bash ...
-
 else echo "OK"; fi; cd $inst;
 ##
 #######################
