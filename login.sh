@@ -68,7 +68,7 @@ fi
 #########################
 ##
 ## --login-screen-- ##
-echo hello?; tp; tput setaf 7 bold; echo -e "\v\v\v\t";
+echo hello?; tput ; tput setaf 7 bold; echo -e "\v\v\v\t";
 /usr/games/fortune | /usr/games/cowsay -pn;
 tput setaf 4; read -n1 -ep "
 ------------------------------------
