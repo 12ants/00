@@ -8,11 +8,7 @@ sudo apt install -y ssh fortune cowsay
 #systemctl set-default graphical.target
 
 
-read -n1 -ep "  --  Choose default login screen [t]erminal or [g]raphical?: " "loginscreen"
-## Message before login
-if [ $loginscreen == "t" ]; then 
-systemctl set-default multi-user.target
-fi
+
 
 
 
