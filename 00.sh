@@ -68,9 +68,6 @@ read -ep "  $c2 $yellow begin installation? $re                     [y/n]: " -i 
 if [ $continue == y ]; then echo -e "\n\n\t --$cyan OK$re -- \n\n";
 ## REMEMER TO CHANGE VAR-NAMES.
 cd $inst;
-
-
-
 ################
 ## BBASH #######
 ################
