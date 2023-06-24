@@ -231,7 +231,6 @@ cd /home; echo -e "\n\n    --  goodluck have fun! \n\n"
 ##
 ## end installer
 ## 
-ipa 
 sleep .1; echo -e "\n\n\t\t $purple ---------------------------------------------$re "
 sleep .1; echo -e "\t\t $blue ---------------------------------------------$re "
 sleep .1; echo -e "\t\t $green ---------------------------------------------$re "
