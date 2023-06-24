@@ -5,7 +5,7 @@ sudo apt install -y ssh fortune cowsay
 ## console login default
 #systemctl set-default multi-user.target
 ## gui def
-systemctl set-default graphical.target
+#systemctl set-default graphical.target
 
 
 read -n1 -ep "  --  Choose default login screen [t]erminal or [g]raphical?: " "loginscreen"
