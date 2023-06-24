@@ -20,7 +20,7 @@ fi
 if [ "$loginscreen" != "${loginscreen#[Gg]}" ];
 then echo Graphical; systemctl set-default graphical.target;
 else echo Terminal; systemctl set-default multi-user.target;
-fi
+fi'
 
 systemctl set-default multi-user.target
 
