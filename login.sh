@@ -16,7 +16,7 @@ fi
 
 read -n1 -ep "  --  Choose default login screen [T]erminal or [G]raphical?: " "yn";
 if [ "$yn" != "${yn#[Gg]}" ];
-then echo Grap; systemctl set-default graphical.target;
+then echo Graphical; systemctl set-default graphical.target;
 
 fi
 
