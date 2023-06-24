@@ -1,5 +1,4 @@
 sudo apt install -y ssh fortune cowsay
-cd ~
 ## console login default
 systemctl set-default multi-user.target
 ## gui def
