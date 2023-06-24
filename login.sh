@@ -15,7 +15,7 @@ systemctl set-default multi-user.target
 fi
 
 read -n1 -ep "  --  Choose default login screen [T]erminal or [G]raphical?: " "yn";
- if [ "$yn" != "${yn#[Gg]}" ]; then echo G
+if [ "$yn" != "${yn#[Gg]}" ]; then echo G
 systemctl set-default multi-user.target
 fi
 
