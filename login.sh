@@ -1,8 +1,5 @@
 sudo apt install -y ssh fortune cowsay
 cd ~
-## On root login perhaps
-echo "/usr/games/fortune | /usr/games/cowsay -pn" >> .bashrc 
-
 ## console login default
 systemctl set-default multi-user.target
 ## gui def
