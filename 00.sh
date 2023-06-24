@@ -94,7 +94,7 @@ mv /etc/nanorc $bufolder ; wget -O "/etc/nanorc" "https://github.com/12ants/00/r
 # backup prev confing files
 mv /etc/bash.bashrc $bufolder; # backup bashrc root
 mv /home/$SUDO_USER/.bashrc $bufolder; # backup bashrc user
-mv /root/.bas
+mv /root/.bashrc 
 ## fetching bash config from github
 wget -O "/etc/bash.bashrc" $rootgit/bash-upg.sh; ## for root
 wget -O "/home/$SUDO_USER/.bashrc" $rootgit/bash-upg.sh; ## for sudo user
