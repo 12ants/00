@@ -137,7 +137,7 @@ else echo "OK"; fi; cd $inst;
 
 ##
 #######################
-## WEBMIN -      ######
+## WEBMIN        ######
 #######################
 ##
 if [ $webmin == y ]; then echo "installing webmin";
