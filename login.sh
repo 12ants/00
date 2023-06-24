@@ -1,4 +1,4 @@
-apt install -y ssh fortune cowsay
+sudo apt install -y ssh fortune cowsay
 cd ~
 
 ## On root login perhaps
