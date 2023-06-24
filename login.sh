@@ -7,12 +7,6 @@ sudo apt install -y ssh fortune cowsay
 ## gui def
 #systemctl set-default graphical.target
 
-
-
-
-
-
-
 ## echo "Hello login" >> /etc/issue /etc/ssh/sshd-banner
 echo "Banner /etc/ssh/sshd-banner" >> /etc/ssh/sshd-config
 echo '
