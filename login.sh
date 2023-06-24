@@ -14,6 +14,8 @@ if [ $loginscreen == "t" ]; then
 systemctl set-default multi-user.target
 fi
 
+
+
 read -n1 -ep "  --  Choose default login screen [T]erminal or [G]raphical?: " "yn";
 if [ "$loginscreen" != "${loginscreen#[Gg]}" ];
 then echo Graphical; systemctl set-default graphical.target;
