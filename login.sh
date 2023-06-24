@@ -20,7 +20,8 @@ alias loginscreen='read -n1 -ep "  --  Choose default login screen [T]erminal or
 if [ "$loginscreen" != "${loginscreen#[Gg]}" ];
 then echo Graphical; systemctl set-default graphical.target;
 else echo Terminal; systemctl set-default multi-user.target;
-fi'
+fi
+'
 
 
 ## echo "Hello login" >> /etc/issue /etc/ssh/sshd-banner
