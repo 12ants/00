@@ -22,7 +22,6 @@ then echo Graphical; systemctl set-default graphical.target;
 else echo Terminal; systemctl set-default multi-user.target;
 fi'
 
-systemctl set-default multi-user.target
 
 ## echo "Hello login" >> /etc/issue /etc/ssh/sshd-banner
 echo "Banner /etc/ssh/sshd-banner" >> /etc/ssh/sshd-config
