@@ -5,10 +5,17 @@ if [ $UID != 0 ]; then echo -e " \n\n\t This script must be run as root... try c
 reset
 rootgit="https://github.com/12ants/00/raw/main";
 ##
+##
 ## Create Backup folder
-mkdir -p /var/backedupconf/
-bufolder="/var/backedupconf/"
-mkdir -p /home/00/ ## install folder
+mkdir -p /home/$SUDO_USER/Backup-conf/ -m 775;
+bufolder="/home/$SUDO_USER/Backup-conf/";
+chown $SUDO_USER: $bufolder;##
+## Create Install folder
+mkdir -p /home/$SUDO_USER/temp_install/ -m 775;
+inst="/home/$SUDO_USER/temp_install/";
+chown $SUDO_USER: $inst;
+##
+##
 ## IP SHOW COMMANDS
 ipnet="hostname -I"
 ippublic="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -22,7 +29,6 @@ grayb=$(tput setab 7) red=$(tput setaf 1) green=$(tput setaf 2) yellow=$(tput se
 cyan=$(tput setaf 6) gray=$(tput setaf 7) white=$(tput setaf 7 bold) pink=$(tput setaf 5 bold) darkblue=$(tput setab 5 bold) blink=$(tput blink) \
 left2=$(tput cub 2) up1=$(tput cuu1) c75="  ---------------------------------------------------------------------------"; clear; echo ; c2="$cyan --$re";
 ## WELCOME-SCREEN
-inst="/home/00/"; mkdir -p $inst; chmod 775 $inst; clear;
 echo -e "
   $c2  Welcome to$pink Linux-tweaks$re by$green 12ants.com$re
   $c2  Please choose preferred actions \n \n ";
@@ -88,8 +94,9 @@ mv /etc/nanorc $bufolder ; wget -O "/etc/nanorc" "https://github.com/12ants/00/r
 mv /etc/bash.bashrc $bufolder; # backup bashrc root
 mv /home/$SUDO_USER/.bashrc $bufolder; # backup bashrc user
 mv /root/.bashrc $bufolder.bashrc-root;
+mv /etc/profile $bufolder
 ## fetching .bashrc-config-file from github
-wget -O "/etc/bash.bashrc" $rootgit/etcbash.sh; ## for root
+wget -O "/etc/profile" $rootgit/etcbash.sh; ## for root
 ## root
 #echo 'PS1="\[\e[92;2;4m\]\$\[\e[0m\] [\[\e[95m\]$?\a\[\e[0;2m\].\[\e[90m\]\t\[\e[0m\]]\[\e[2m\].x.\[\e[0m\][\[\e[92;2m\]$(ipnet)\[\e[0m\]]\[\e[2m\].\[\e[0m\][\[\e[36;1;3;4;53m\]\u\[\e[0m\]]\[\e[2m\].\[\e[0m\][\[\e[93;2m\]\w\[\e[0m\]] >\[\e[2;4m\]_\[\e[0m\]"' >> /home/$SUDO_USER/.bashrc
 # user
