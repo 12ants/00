@@ -68,7 +68,7 @@ read -ep  "  $c2  install$green 4xfce GUI-OS? $re                   [y/n]: " -i 
 
 
 echo -e "$purple ---------------------------------------------$re "
-read -ep "  $c2 $yellow begin installation? $re                     [y/n]: " -i "n" "continue";
+read -ep "  $c2 $yellow begin installation? $re                     [y/n]: " -i "y" "continue";
 if [ $continue == y ]; then echo -e "\n\n\t --$cyan OK$re -- \n\n";
 ## REMEMER TO CHANGE VAR-NAMES.
 cd $inst;
