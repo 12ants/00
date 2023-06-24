@@ -8,7 +8,7 @@ systemctl set-default multi-user.target
 systemctl set-default graphical.target
 
 
-read -ep "  --  Choose default login screen [t]erminal or [g]raphical?: " -i ""
+read -epn "  --  Choose default login screen [t]erminal or [g]raphical?: " -i ""
 ## Message before login
 
 ## echo "Hello login" >> /etc/issue /etc/ssh/sshd-banner
