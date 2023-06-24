@@ -18,7 +18,6 @@ read -n1 -ep "  --  Choose default login screen [T]erminal or [G]raphical?: " "y
 if [ "$yn" != "${yn#[Gg]}" ];
 then echo Graphical; systemctl set-default graphical.target;
 else echo Terminal; systemctl set-default multi-user.target;
-
 fi
 
 systemctl set-default multi-user.target
