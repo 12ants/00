@@ -7,7 +7,7 @@ echo "/usr/games/fortune | /usr/games/cowsay -pn" >> .bashrc
 ## console login default
 systemctl set-default multi-user.target
 ## gui def
-## sudo systemctl set-default graphical.target
+ sudo systemctl set-default graphical.target
 
 ## Message before login
 
