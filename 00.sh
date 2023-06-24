@@ -88,7 +88,6 @@ mv /etc/nanorc $bufolder ; wget -O "/etc/nanorc" "https://github.com/12ants/00/r
 mv /etc/bash.bashrc $bufolder; # backup bashrc root
 mv /home/$SUDO_USER/.bashrc $bufolder; # backup bashrc user
 mv /root/.bashrc $bufolder.bashrc-root;
-
 ## fetching .bashrc-config-file from github
 wget -O "/etc/bash.bashrc" $rootgit/etcbash.sh; ## for root
 # wget -O "/home/$SUDO_USER/.bashrc" $rootgit/bash-upg.sh; ## for sudo user
