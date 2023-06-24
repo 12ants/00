@@ -14,7 +14,7 @@ if [ $loginscreen == "t" ]; then
 systemctl set-default multi-user.target
 fi
 
-if [ $loginscreen == "g" ]; then 
+if [ $loginscreen == "g/G" ]; then 
 systemctl set-default multi-user.target
 fi
 
