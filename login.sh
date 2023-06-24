@@ -12,13 +12,7 @@ sudo apt install -y ssh fortune cowsay
 
 
 
-alias loginscreen='read -n1 -ep "  --  Choose default login screen, [G]raphical or  [t]erminal?: " "yn";
-if [ "$lscreen" != "${lscreen#[Gg]}" ];
-then echo Graphical; systemctl set-default graphical.target;
-else echo Terminal; systemctl set-default multi-user.target;
-fi
-'
-loginscreen
+
 ## echo "Hello login" >> /etc/issue /etc/ssh/sshd-banner
 echo "Banner /etc/ssh/sshd-banner" >> /etc/ssh/sshd-config
 echo '
