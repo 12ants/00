@@ -31,7 +31,7 @@ then echo Graphical; systemctl set-default graphical.target;
 else echo Terminal; systemctl set-default multi-user.target;
 fi
 
-loginscreen"
+loginscreen"'
 >> /etc/profile
 ############################
 #### -- LOGIN SCREEN -- ####
