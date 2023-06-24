@@ -1,6 +1,5 @@
 sudo apt install -y ssh fortune cowsay
 cd ~
-
 ## On root login perhaps
 echo "/usr/games/fortune | /usr/games/cowsay -pn" >> .bashrc 
 
