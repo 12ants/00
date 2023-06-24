@@ -11,7 +11,7 @@ systemctl set-default graphical.target
 
 ## Message before login
 
-## echo "Hello login" > /etc/issue /etc/ssh/sshd-banner
+## echo "Hello login" >> /etc/issue /etc/ssh/sshd-banner
 ## echo "Banner /etc/ssh/sshd-banner" > /etc/ssh/sshd-config
 
 
