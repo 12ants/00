@@ -1,4 +1,22 @@
 #!/bin/bash
+## written by 12ants.github.io
+#########################
+## -- CUSTOM LINUX --  ##
+#########################
+##
+## --login-screen-- ##
+echo hello?; tput cup 1; tput setaf 7 bold; echo -e "\v\v\v\t";
+/usr/games/fortune | /usr/games/cowsay -pn;
+tput setaf 4; read -n1 -ep "
+------------------------------------
+------------------------------------
+---------- $(tput setaf 7 bold) Start windows ? $(tput setaf 7)[$(tput setaf 2)Y$(tput setaf 7)/$(tput setaf 1)n$(tput setaf 7)]$(tput setaf 7 bold) " yn;
+if [ "$yn" != "${yn#[Nn]}" ]; then
+echo "${re} nope ";echo -e ;
+else ###### ---- [YES] ----- ######
+echo OK
+startx
+fi
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
