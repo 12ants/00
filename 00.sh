@@ -63,9 +63,6 @@ read -ep  "  $c2  install$green cloudpanel-cracked? $re             [y/n]: " -i 
 read -ep  "  $c2  install$green hestia-web-server? $re              [y/n]: " -i "n" "hestia"
 read -ep  "  $c2  install$green guake? $re                          [y/n]: " -i "n" "guake"
 read -ep  "  $c2  install$green 4xfce GUI-OS? $re                   [y/n]: " -i "n" "xfce"
-
-
-
 echo -e "$purple ---------------------------------------------$re "
 read -ep "  $c2 $yellow begin installation? $re                     [y/n]: " -i "y" "continue";
 if [ $continue == y ]; then echo -e "\n\n\t --$cyan OK$re -- \n\n";
