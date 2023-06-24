@@ -102,7 +102,6 @@ sleep .4; echo -e "$c2 $green    --  https://12ants.github.io/$re $c2$re "; slee
 sleep .4; 
 ##
 ## - Done setting color to bash ...
-## - Done setting color to bash ...
 else echo "OK"; fi; cd $inst;
 ##
 #######################
