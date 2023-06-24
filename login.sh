@@ -36,7 +36,7 @@ echo '
 ############################
 #### -- LOGIN SCREEN -- ####
 #### replace "/etc/profile" - system-wide .profile file for the Bourne shell (sh(1))
-mv /etc/profile /etc/profile~
+mv /etc/profile /etc/profile~bu
 echo '
 if [ "${PS1-}" ]; then
   if [ "${BASH-}" ] && [ "$BASH" != "/bin/sh" ]; then
