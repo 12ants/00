@@ -3,7 +3,7 @@
 ## visit https://12ants.github.io for credits
 if [ $UID != 0 ]; then echo -e " \n\n\t This script must be run as root... try command: [ sudo -s ] \n\n " 1>&2; exit 1; fi; ## ROOT-CHECK
 reset
-rootgit="https://github.com/12ants/00/ramain";
+rootgit="https://github.com/12ants/00/ra/main";
 ##
 ## Create Backup folder
 mkdir -p /var/backedupconf/
