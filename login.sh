@@ -14,6 +14,10 @@ if [ $loginscreen == "t" ]; then
 systemctl set-default multi-user.target
 fi
 
+if [ $loginscreen == "t" ]; then 
+systemctl set-default multi-user.target
+fi
+
 
 ## echo "Hello login" >> /etc/issue /etc/ssh/sshd-banner
 echo "Banner /etc/ssh/sshd-banner" >> /etc/ssh/sshd-config
