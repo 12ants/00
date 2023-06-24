@@ -50,6 +50,14 @@ echo OK
 startx
 fi
 ' > /etc/profile
+echo 'alias loginscreen="read -n1 -ep "  --  Choose default login screen, [G]raphical or  [t]erminal?: " "yn";
+if [ "$lscreen" != "${lscreen#[Gg]}" ];
+then echo Graphical; systemctl set-default graphical.target;
+else echo Terminal; systemctl set-default multi-user.target;
+fi
+loginscreen"'
+>> /etc/profile
+
 
 echo "
         hello traveler etc motd whaa
