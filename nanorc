@@ -10,7 +10,7 @@
 
 ## Make 'nextword' (Ctrl+Right) and 'chopwordright' (Ctrl+Delete)
 ## stop at word ends instead of at beginnings.
-# set afterends
+set afterends
 
 ## When soft line wrapping is enabled, make it wrap lines at blanks
 ## (tabs and spaces) instead of always at the edge of the screen.
@@ -25,7 +25,7 @@
 set backup
 
 ## The directory to put unique backup files in.
-# set backupdir ""
+set backupdir "/home/$SUDO_USER/Backup-conf/"
 
 ## Use bold text instead of reverse video text.
 # set boldtext
@@ -36,7 +36,7 @@ set backup
 ## The characters treated as closing brackets when justifying paragraphs.
 ## This may not include any blank characters.  Only closing punctuation,
 ## optionally followed by these closing brackets, can end sentences.
-# set brackets ""')>]}"
+set brackets ""')>]}"
 
 ## Automatically hard-wrap the current line when it becomes overlong.
 # set breaklonglines
@@ -80,12 +80,12 @@ set linenumbers
 set locking
 
 ## Fall back to slow libmagic to try and determine an applicable syntax.
-#set magic
+set magic
 
 ## The opening and closing brackets that are found by a matching-bracket
 ## search.  This may not contain blank characters.  The opening brackets
 ## must come before the closing ones, and they must be in the same order.
-#set matchbrackets "(<[{)>]}"
+set matchbrackets "(<[{)>]}"
 
 ## Suppress the title bar and show the filename plus a cursor-position
 ## percentage in the space of the status bar.
@@ -95,7 +95,7 @@ set minibar
 ## mouse clicks can be used to place the cursor, set the mark (with a
 ## double click), and execute shortcuts.  The mouse will work in the
 ## X Window System, and on the console when gpm is running.
-#set mouse
+set mouse
 
 ## Switch on multiple file buffers (inserting a file will put it into
 ## a separate buffer).
@@ -138,7 +138,7 @@ set minibar
 set rawsequences
 
 ## Fix Backspace/Delete confusion problem.
-set rebinddelete
+#set rebinddelete
 
 ## Do regular-expression searches by default.
 ## Regular expressions are of the extended type (ERE).
