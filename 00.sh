@@ -132,7 +132,7 @@ wget -O 12login.sh $rootgit/login.sh; bash 12login.sh;
 else echo "OK"; fi; cd $inst;
 ##
 #######################
-## LOIN - DONE #######
+## LOGIN - DONE #######
 #######################
 
 ##
