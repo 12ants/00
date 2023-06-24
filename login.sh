@@ -14,7 +14,7 @@ if [ $loginscreen == "t" ]; then
 systemctl set-default multi-user.target
 fi
 
-if [ $loginscreen == "g/G" ]; then 
+read -p "    ${red}--${normal}  Change site directory? [y/N] " yn;if [ "$yn" != "${yn#[Yy]}" ];then echo "    ${pink}--${normal}  Yes - OK";
 systemctl set-default multi-user.target
 fi
 
