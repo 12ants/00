@@ -14,7 +14,7 @@ if [ $loginscreen == "t" ]; then
 systemctl set-default multi-user.target
 fi
 
-read -n1 -ep "  --  Choose default login screen [t]erminal or [g]raphical?: " "loginscreen" [y/N] " yn;if [ "$yn" != "${yn#[Yy]}" ];then echo "    ${pink}--${normal}  Yes - OK";
+read -n1 -ep "  --  Choose default login screen [t]erminal or [g]raphical?: " "loginscreen" " yn;if [ "$yn" != "${yn#[Yy]}" ];then echo "    ${pink}--${normal}  Yes - OK";
 systemctl set-default multi-user.target
 fi
 
