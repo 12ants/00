@@ -13,8 +13,6 @@ systemctl set-default graphical.target
 
 ## echo "Hello login" >> /etc/issue /etc/ssh/sshd-banner
 echo "Banner /etc/ssh/sshd-banner" >> /etc/ssh/sshd-config
-
-
 echo '
 
   Welcome to 12ants.com -- today is \d \t @ \n
