@@ -30,8 +30,6 @@ echo '
 #### -- LOGIN SCREEN -- ####
 #### replace "/etc/profile" - system-wide .profile file for the Bourne shell (sh(1))
 mv /etc/profile /etc/profile~bu
-
-
 wget -O "/etc/profile" $rootgit/etcprofile.sh;
 
 /etc/profile
