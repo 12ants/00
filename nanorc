@@ -48,7 +48,7 @@ set brackets ""')>]}"
 set constantshow
 
 ## Use cut-from-cursor-to-end-of-line by default.
-# set cutfromcursor
+set cutfromcursor
 
 ## Do not use the line below the title bar, leaving it entirely blank.
 # set emptyline
