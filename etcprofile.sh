@@ -47,7 +47,7 @@ fi
 
 alias loginscreen=
 read -n1 -ep "  --  Choose default login screen, ["$green"G"$re"]raphical or  ["$blue"t"$re"]erminal?: " "lscreen";
-echo -e "  --  lsc"
+echo -e "  --  lscreen"
 if [ "$lscreen" != "${lscreen#[Gg]}" ];
 then echo Graphical; systemctl set-default graphical.target;
 else echo Terminal; systemctl set-default multi-user.target;
