@@ -1,18 +1,19 @@
+
 # /etc/profile: system-wide .profile file for the Bourne shell (sh(1))
 # and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
 
 if [ "${PS1-}" ]; then
   if [ "${BASH-}" ] && [ "$BASH" != "/bin/sh" ]; then
     # The file bash.bashrc already sets the default PS1.
-    # PS1='\h:\w\$ '
+    # PS1="\h:\w\$ "
     if [ -f /etc/bash.bashrc ]; then
       . /etc/bash.bashrc
     fi
   else
     if [ "$(id -u)" -eq 0 ]; then
-      PS1='# '
+      PS1="# "
     else
-      PS1='$ '
+      PS1="$ "
     fi
   fi
 fi
@@ -26,10 +27,12 @@ if [ -d /etc/profile.d ]; then
   unset i
 fi
 
-
-######################
-
-echo hello?; tput setaf 7 bold; echo -e "\v\v\v\t";
+#########################
+## -- CUSTOM LINUX --  ##
+#########################
+##
+## --login-screen-- ##
+echo hello?; tput cup 1; tput setaf 7 bold; echo -e "\v\v\v\t";
 /usr/games/fortune | /usr/games/cowsay -pn;
 tput setaf 4; read -n1 -ep "
 ------------------------------------
@@ -41,3 +44,4 @@ else ###### ---- [YES] ----- ######
 echo OK
 startx
 fi
+
