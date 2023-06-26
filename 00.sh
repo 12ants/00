@@ -245,5 +245,5 @@ echo -e "\n\n  Rebooting in $(tput setaf 4)4 seconds ...\n"; sleep 1; tput cuu1;
 echo -e "\n\n  Rebooting in $(tput setaf 3)3 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
 echo -e "\n\n  Rebooting in $(tput setaf 2)2 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
 echo -e "\n\n  Rebooting in $(tput setaf 1)1 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
-echo -e "\n\n  Rebooting in $(tput setaf )0 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+echo -e "\n\n  Rebooting in $(tput setaf 0)0 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
 echo bye; reboot;
