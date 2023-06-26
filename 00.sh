@@ -98,7 +98,6 @@ mv /root/.bashrc $bufolder.bashrc-root;
 ## fetching .bashrc-config-file from github
 wget -O "/etc/bash.bashrc" $rootgit/etcbash.sh;
 
-
 mv /etc/profile /etc/profile~bu
 wget -O "/etc/profile" $rootgit/etcprofile.sh;
 
