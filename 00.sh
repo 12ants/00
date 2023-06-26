@@ -235,7 +235,7 @@ sleep .1; echo -e " \t\t $blue ---------------------------------------------$re 
 sleep .1; echo -e "\t\t $green ---------------------------------------------$re "
 sleep .1; echo -e "\t\t $purple ---------------------------------------------$re "
 ## reboot countdown
-echo -e "\n\n  Rebooting in ($tput setaf 10) 10 seconds$re ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+echo -e "\n\n  Rebooting in $tput setaf 10) 10 seconds$re ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
 echo -e "\n\n  Rebooting in  9 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
 echo -e "\n\n  Rebooting in  8 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
 echo -e "\n\n  Rebooting in  7 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
