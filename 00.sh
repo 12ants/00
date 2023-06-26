@@ -236,14 +236,14 @@ sleep .1; echo -e "\t\t $green ---------------------------------------------$re 
 sleep .1; echo -e "\t\t $purple ---------------------------------------------$re "
 ## reboot countdown
 echo -e "\n\n  Rebooting in $(tput setaf 10)10 seconds$re ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
-echo -e "\n\n  Rebooting in $(tput setaf 10)9 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
-echo -e "\n\n  Rebooting in $(tput setaf 10)8 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
-echo -e "\n\n  Rebooting in $(tput setaf 10)7 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
-echo -e "\n\n  Rebooting in $(tput setaf 10)6 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
-echo -e "\n\n  Rebooting in $(tput setaf 10)5 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
-echo -e "\n\n  Rebooting in $(tput setaf 10)4 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
-echo -e "\n\n  Rebooting in $(tput setaf 10)3 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
-echo -e "\n\n  Rebooting in $(tput setaf 10)2 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
-echo -e "\n\n  Rebooting in $(tput setaf 10)1 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
-echo -e "\n\n  Rebooting in $(tput setaf 10)0 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+echo -e "\n\n  Rebooting in $(tput setaf )9 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+echo -e "\n\n  Rebooting in $(tput setaf )8 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+echo -e "\n\n  Rebooting in $(tput setaf )7 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+echo -e "\n\n  Rebooting in $(tput setaf )6 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+echo -e "\n\n  Rebooting in $(tput setaf )5 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+echo -e "\n\n  Rebooting in $(tput setaf )4 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+echo -e "\n\n  Rebooting in $(tput setaf )3 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+echo -e "\n\n  Rebooting in $(tput setaf )2 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+echo -e "\n\n  Rebooting in $(tput setaf )1 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
+echo -e "\n\n  Rebooting in $(tput setaf )0 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
 echo bye; reboot;
