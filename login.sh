@@ -36,7 +36,7 @@ wget -O "/etc/profile" $rootgit/etcprofile.sh;
 echo "
 ip
 
-hello traveler etc motd whaa
+hello traveler etcmotd whaa
 sleep 1
 " >> /etc/motd 
 /etc/init.d/ssh restart 
