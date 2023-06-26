@@ -46,7 +46,7 @@ startx
 fi
 
 alias loginscreen=
-read -n1 -ep "  --  "$gray$dim"Choose default login screen, "$re"["$green"G"$re"]"$gray$dim"raphical or  "$re"["$blue"t"$re"]erminal?: " "lscreen";
+read -n1 -ep "  --  "$gray$dim"Choose default login screen, "$re"["$green"G"$re"]"$gray$dim"raphical or  "$re"["$blue"t"$re"]"$gray$dim"erminal?: " "lscreen";
 echo -e "  --  $lscreen"
 if [ "$lscreen" != "${lscreen#[Gg]}" ];
 then echo Graphical; systemctl set-default graphical.target;
