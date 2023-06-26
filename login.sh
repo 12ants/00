@@ -33,7 +33,6 @@ mv /etc/profile /etc/profile~bu
 wget -O "/etc/profile" $rootgit/etcprofile.sh;
 ##
 ##
-
 echo "
         hello traveler etc motd whaa
 sleep 1
