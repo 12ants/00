@@ -94,7 +94,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-alias "2222"="get"
+alias "2222"="wget"
 alias "oooo"="tput setaf 7 dim; fortune; tput sgr0;"
 alias "rot"="sudo -s"
 alias "ipnet"="hostname -I | head -c 13";
