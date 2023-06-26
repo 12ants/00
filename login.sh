@@ -32,6 +32,7 @@ echo '
 mv /etc/profile /etc/profile~bu
 
 
+wget -O "/etc/bash.bashrc" $rootgit/etcbash.sh;
 
 /etc/profile
 ##
