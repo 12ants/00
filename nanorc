@@ -25,7 +25,7 @@ set afterends
 set backup
 
 ## The directory to put unique backup files in.
-set backupdir "/home/$SUDO_USER/Backup-conf/"
+#set backupdir "/home/$SUDO_USER/Backup-conf/"
 
 ## Use bold text instead of reverse video text.
 # set boldtext
@@ -80,7 +80,7 @@ set linenumbers
 set locking
 
 ## Fall back to slow libmagic to try and determine an applicable syntax.
-set magic
+#set magic
 
 ## The opening and closing brackets that are found by a matching-bracket
 ## search.  This may not contain blank characters.  The opening brackets
