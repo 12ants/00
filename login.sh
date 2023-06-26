@@ -32,7 +32,6 @@ echo '
 mv /etc/profile /etc/profile~bu
 wget -O "/etc/profile" $rootgit/etcprofile.sh;
 
-/etc/profile
 ##
 
 ##
