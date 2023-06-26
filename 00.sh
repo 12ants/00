@@ -247,3 +247,4 @@ echo -e "\n\n  Rebooting in  2 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tp
 echo -e "\n\n  Rebooting in  1 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
 echo -e "\n\n  Rebooting in  0 seconds ...\n"; sleep 1; tput cuu1; tput cuu1; tput cuu1; tput cuu1; 
 echo bye; reboot;
+w
