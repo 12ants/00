@@ -35,6 +35,7 @@ wget -O "/etc/profile" $rootgit/etcprofile.sh;
 ##
 echo "
 ip
+        
         hello traveler etc motd whaa
 sleep 1
 " >> /etc/motd 
