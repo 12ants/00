@@ -303,7 +303,6 @@ bind ^W writeout main
 bind ^O insert main
 set multibuffer
 unbind ^H help all
-unbind ^H exit help
 bind ^F whereis all
 bind ^G findnext all
 bind ^B wherewas all
