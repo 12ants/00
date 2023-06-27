@@ -16,7 +16,7 @@ GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`
 GRUB_DISABLE_OS_PROBER=false
 GRUB_HIDDEN_TIMEOUT=0
 GRUB_CMDLINE_LINUX="" 
-GRUB_CMDLINE_LINUX_DEFAULT="" 
+GRUB_CMDLINE_LINUX_DEFAULT="--" 
 
 ' > /etc/default/grub; 
 
