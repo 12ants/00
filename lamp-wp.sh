@@ -28,7 +28,6 @@ read -p "    ${pink}--${normal} ${blue}Base url: like: -- ${normal}myaddress.net
 if [[ -z "$userurl" ]]; then
 userurl="wordpress$(date +%d%m%y)" ;
 fi
-
 read -p "    ${yellow}--${normal} ${blue}New directory: like: ${pink}--${normal} ${white}new-wp-site ${pink}--${normal} ${blue}(leave empty if unsure):${white} " userdir
 install_dir="/var/www/${userurl}${userdir}"
 sleep 0.1;echo
