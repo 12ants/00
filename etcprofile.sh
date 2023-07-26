@@ -34,23 +34,16 @@ fi
 ## --login-screen-- ##
 echo hello?; tput cup 1; tput setaf 7 bold; echo -e "\v\v\v\t";
 /usr/games/fortune | /usr/games/cowsay -pn;
-tput setaf 4; read -n1 -ep "
+tput setaf 4; echo -e "
 ------------------------------------
 ------------------------------------
----------- $(tput setaf 7 bold) Start windows ? $(tput setaf 7)[$(tput setaf 2)Y$(tput setaf 7)/$(tput setaf 1)n$(tput setaf 7)]$(tput setaf 7 bold) " yn;
-if [ "$yn" != "${yn#[Nn]}" ]; then
-echo "${re} nope ";echo -e ;
-else ###### ---- [YES] ----- ######
-echo OK
-startx
-fi
-
-alias loginscreen=
+---------- $(tput setaf 7 bold) type [$(tput setaf 2)x$(tput setaf 7)] or to start. [$(tput setaf 2)loginscreen$(tput setaf 7)] for options or [$(tput setaf 2)info$(tput setaf 7)] for hello ? $(tput setaf 7 bold) ";
+alias x="startx"
+alias loginscreen='
 read -n1 -ep "  --  "$gray$dim"Choose default login screen, "$re"["$green"G"$re"]"$gray$dim"raphical or  "$re"["$blue"t"$re"]"$gray$dim"erminal?: " "lscreen";
 echo -e "  --  $lscreen"
 if [ "$lscreen" == "G/g" ];
 then echo Graphical; systemctl set-default graphical.target;
 else echo Terminal; systemctl set-default multi-user.target;
 fi
-
-loginscreen
+'
