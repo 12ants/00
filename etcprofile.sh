@@ -32,16 +32,18 @@ fi
 #########################
 ##
 ## --login-screen-- ##
+clear;
 echo hello?; tput cup 1; tput setaf 7 bold; echo -e "\v\v\v\t";
 /usr/games/fortune | /usr/games/cowsay -pn;
 tput setaf 4; echo -e "
-------------------------------------
-------------------------------------
----------- $(tput setaf 7 bold) type [$(tput setaf 2)x$(tput setaf 7)] or to start. [$(tput setaf 2)loginscreen$(tput setaf 7)] for options or [$(tput setaf 2)info$(tput setaf 7)] for hello ? $(tput setaf 7 bold) "
-
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+---------- $(tput setaf 7 dim) type [$(tput setaf 2)x$(tput setaf 7 dim)] or to start. [$(tput setaf 2)loginscreen$(tput setaf 7 dim)] for options or [$(tput setaf 2)info$(tput setaf 7 dim)] for hello ? $(tput setaf 4 bold) "
+------------------------------------------------------------------------------------------------------------
 
 
 ;
+tput sgr0;
 alias x="startx"
 alias loginscreen='
 read -n1 -ep "  --  "$gray$dim"Choose default login screen, "$re"["$green"G"$re"]"$gray$dim"raphical or  "$re"["$blue"t"$re"]"$gray$dim"erminal?: " "lscreen";
