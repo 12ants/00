@@ -38,11 +38,13 @@ read -ep "  $c2  update system? [y/n]: " -i "n" "upsys";
 if [ $upsys == y ]; then echo "ok";
 apt update; apt -y upgrade;
 ## INSTALL BASIC APPS
+
 apt -y install ssh openssh-server openssl curl wget dnsutils nano
 clear
 else echo "OK"; fi; cd $inst;
 echo -n "    -- $blue Network IP:$cyan "; $ipnet;
 echo -n "    -- $purple Public  IP:$cyan "; $ippublic;
+apt -y install curl ssh openssh-server openssl  1>&2; 
 
 ##############################
 ######## INSTALLER ###########
@@ -168,13 +170,11 @@ else echo "OK"; fi; cd $inst;
 #######################
 ##
 if [ $cpr == y ]; then echo "  -- installing cloudpanel.. ";
-apt -y install curl ssh openssh-server openssl;
 curl -sS https://installer.cloudpanel.io/ce/v2/install.sh -o install.sh; \
 echo "3874fff99744cf3afe6f533013282e87c95640e128d1d3998666e2929dc12978 install.sh" | \
 sha256sum -c && sudo bash install.sh;
 apt update; apt -y upgrade;
 read -ep "   -- System will now reboot... Run installer again to install other apps -- " -i "OK" "kkkkkk"
-sleep 1; reboot;
 else echo "OK"; fi; cd $inst;
 ## CP CUSTOM - BUILD // NEEDS WORK
 if [ $cpc == y ]; then echo "installing cloudpanel";
