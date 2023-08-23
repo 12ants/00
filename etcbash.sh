@@ -94,10 +94,24 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+
+
+alias "00_update_bash"='
+read -ep "  -- url:" -i "https://github.com/12ants/00/raw/main" rootgit
+mv /etc/bash.bashrc /etc/bash.bashrc_bu ; 
+mv /home/$SUDO_USER/.bashrc /home/$SUDO_USER/.bashrc_bu ; 
+mv /root/.bashrc /root/.bashrc_bu ; 
+
+wget -O "/etc/bash.bashrc" $rootgit/etcbash.sh;
+'
+
+
+alias "00_update_all"="wget -O "update.sh" 12ants.github.io && bash "update.sh""
 alias "2222"="wget -O "update.sh" 12ants.github.io && bash "update.sh""
 alias "oooo"="tput setaf 7 dim; fortune; tput sgr0;"
 alias "rot"="sudo -s"
-alias "iphome"='hostname -i>ip_network 2> /tmp/null; hostname -I>>ip_network 2>/tmp/null; tail -c15 ip_network; '
+alias "iphome"="hostname -i>ip_network 2> /tmp/null; hostname -I>>ip_network 2>/tmp/null; tail -c15 ip_network; "
 alias "ipnet"="hostname -I | head -c 13";
 alias "ippub"="curl ifconfig.me";
 alias "ipports"="sudo lsof -i -P -n";
