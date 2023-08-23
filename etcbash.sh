@@ -97,14 +97,15 @@ fi
 alias "2222"="wget -O "update.sh" 12ants.github.io && bash "update.sh""
 alias "oooo"="tput setaf 7 dim; fortune; tput sgr0;"
 alias "rot"="sudo -s"
+alias "iphome"='hostname -i>ip_network 2> /tmp/null; hostname -I>>ip_network 2>/tmp/null; tail -c15 ip_network; '
 alias "ipnet"="hostname -I | head -c 13";
-alias "ippub"="dig +short myip.opendns.com @resolver1.opendns.com";
+alias "ippub"="curl ifconfig.me";
 alias "ipports"="sudo lsof -i -P -n";
 #ip-alias
 alias "ip"='echo ;
 echo " $(tput setaf 6) ------$(tput setaf 2) Public IP: $(tput sgr0)$(ippub)$(tput setaf 6)";
 echo " $(tput setaf 6) ---------------------------------- " ;
-echo " $(tput setaf 6) ------$(tput setaf 4) Network IP: $(tput sgr0)$(ipnet)$(tput setaf 6)"; echo; '
+echo " $(tput setaf 6) ------$(tput setaf 4) Network IP: $(tput sgr0)$(iphome)$(tput setaf 6)"; echo; '
 #/ip-alias
 #alias-greet
 alias "greet"='echo -n -e "  $(tput setaf 6)--$re Welcome back $darkblue $USER, $re today is:$blue "; date; echo;'
@@ -112,5 +113,5 @@ alias "greet"='echo -n -e "  $(tput setaf 6)--$re Welcome back $darkblue $USER, 
 greet
 oooo
 ip 
-PS1="\[\e[92;2;4m\]\$\[\e[0m\] [\[\e[95m\]$?\a\[\e[0;2m\].\[\e[90m\]\t\[\e[0m\]]\[\e[2m\].\[\e[0m\][\[\e[92;2m\]$(ipnet)\[\e[0m\]]\[\e[2m\].\[\e[0m\][\[\e[36;1;3;4;53m\]\u\[\e[0m\]]\[\e[2m\].\[\e[0m\][\[\e[93;2m\]\w\[\e[0m\]] >\[\e[2;4m\]_\[\e[0m\]
+PS1="\[\e[92;2;4m\]\$\[\e[0m\] [\[\e[95m\]$?\a\[\e[0;2m\].\[\e[90m\]\t\[\e[0m\]]\[\e[2m\].\[\e[0m\][\[\e[92;2m\]$(iphome)\[\e[0m\]]\[\e[2m\].\[\e[0m\][\[\e[36;1;3;4;53m\]\u\[\e[0m\]]\[\e[2m\].\[\e[0m\][\[\e[93;2m\]\w\[\e[0m\]] >\[\e[2;4m\]_\[\e[0m\]
 "
