@@ -3,7 +3,7 @@
 ## MULTISELECT BASH-MENU
 ##
 ##  To run this script, first declare the options:
-##  ops=(FIRST SECOND ETC) . multi 
+##  ops=(FIRST SECOND ETC) && . multi 
 ##
 ##
 ##
@@ -13,7 +13,7 @@ echo -e "
 ##
 ##  To run this script, declare the options:
 ##
-##  ops=(FIRST SECOND ETC) . multi 
+##  ops=(FIRST SECOND ETC) && . multi 
 ##
 ##
 ##
