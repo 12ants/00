@@ -96,6 +96,11 @@ if ! shopt -oq posix; then
 fi
 
 
+ipnet="hostname -I"
+ippublic="dig +short myip.opendns.com @resolver1.opendns.com"
+ippub="dig +short myip.opendns.com @resolver1.opendns.com"
+ipa="echo ---- $blue Network IP:$cyan ; $ipnet; ---- $purple Public  IP:$cyan ; $ippublic;"
+alias ipa="echo ---- $blue Network IP:$cyan ; $ipnet; ---- $purple Public  IP:$cyan ; $ippublic;"
 
 alias "00_update_bash"='
 read -ep "  -- url:" -i "https://github.com/12ants/00/raw/main" rootgit
