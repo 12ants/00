@@ -8,7 +8,7 @@ ARCH=
 export IP=
 export DEBIAN_FRONTEND=noninteractive
 [[ -z "$CREATE_AMI" ]] && export CREATE_AMI
-[[ -z "$DB_ENGINE" ]] && export DB_ENGINE="MYSQL_8.0"
+
 
 export IS_LXC=0
 if grep -q container=lxc "/proc/1/environ"; then
@@ -39,6 +39,18 @@ then
         DEBIAN_VERSION=11
         OS_VERSION=11
       fi
+
+ read -ep "
+
+    --  Choose DB [m]aria / m[s]ql " "dbdb";
+if [ "$dbdb" == "m" ]
+then 
+export DB_ENGINE="MARIADB_10.9"
+else
+export DB_ENGINE="MYSQL_8.0"
+fi
+
+
    
   echo "Architecture: $ARCH"
   echo "OS Name: $OS_NAME"
